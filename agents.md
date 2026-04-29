@@ -1,4 +1,4 @@
-# Getly Web - Agent Contribution Guide
+# Hive - Agent Contribution Guide
 
 This guide is prescriptive. Follow these rules when contributing code.
 
@@ -9,7 +9,7 @@ Use this top-level structure and do not move responsibilities across folders.
 ```
 app/                    Next.js route entries only
 components/             UI and feature components only
-hooks/                  data access + async business logic
+hooks/                  shared transport/util hooks only (no feature API hooks)
 lib/                    shared pure helpers and constants
 types/                  domain and shared TypeScript types
 public/                 static assets only
@@ -31,9 +31,9 @@ public/                 static assets only
 
 ### Hook Folders
 
-- hooks/auth: auth/session/user hooks.
-- hooks/dashboard: dashboard feature hooks.
-- hooks/kyc: KYC feature hooks.
+- components/pages/auth/hooks/index.ts: auth hooks.
+- components/pages/dashboard/<feature>/hooks/index.ts: dashboard feature hooks.
+- components/pages/kyc/hooks/index.ts: KYC hooks.
 - hooks/use-fetch.ts: shared requestApi transport.
 
 ## 2) Feature Scaffold (Exact)
@@ -49,7 +49,7 @@ For each new dashboard feature named <feature>, create files in this order.
 - Contains UI composition and hook consumption.
 
 3. Feature data hooks
-- hooks/dashboard/<feature>.ts
+- components/pages/<feature>/hooks/index.ts
 - Contains fetcher functions and exported React Query hooks.
 
 4. Feature types
@@ -80,7 +80,8 @@ Not allowed in app/*/page.tsx:
 All remote data hooks must follow this structure.
 
 File location:
-- hooks/<domain>/<feature>.ts
+- components/pages/<feature>/hooks/index.ts
+- Example: auth/hooks/index.ts
 
 Required parts in each hook file:
 1. Type imports from types/*
@@ -118,7 +119,7 @@ Components call hooks. Components do not call requestApi directly.
 
 Allowed call chain:
 1. components/pages/<feature>/<feature>-page.tsx
-2. calls hooks/dashboard/<feature>.ts exports
+2. calls components/pages/<feature>/hooks/index.ts exports
 3. hook uses requestApi from hooks/use-fetch.ts
 4. hook normalizes and returns typed result
 
@@ -136,7 +137,7 @@ Use these function categories and keep boundaries strict.
 - Rules: deterministic, no side effects, reusable across features
 
 2. Data access functions
-- Location: hooks/<domain>/<feature>.ts
+- Location: components/pages/<feature>/hooks/index.ts
 - Rules: async, call requestApi, normalize API data, throw on failure
 
 3. UI event handlers
@@ -185,7 +186,7 @@ Do not create context for local single-component state.
 For every new feature or endpoint integration, execute in this order:
 
 1. Define types in types/<feature>.ts
-2. Implement data access functions in hooks/<domain>/<feature>.ts
+2. Implement data access functions in components/pages/<feature>/hooks/index.ts
 3. Export React Query hook(s) from the same hook file
 4. Build feature UI in components/pages/<feature>/*
 5. Wire route page in app/*/<feature>/page.tsx
@@ -219,7 +220,3 @@ When two implementations are possible, choose in this order:
 2. Shared project primitive (requestApi, shared hooks, ui primitives, context)
 3. Smaller change surface
 4. Stronger type safety and clearer failure handling
-
----
-
-Last updated: April 2026
