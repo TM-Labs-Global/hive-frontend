@@ -1,14 +1,95 @@
-import { Geist, Geist_Mono, Inter } from "next/font/google"
-
+import localFont from "next/font/local"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { cn } from "@/lib/utils";
 
-const inter = Inter({subsets:['latin'],variable:'--font-sans'})
+// Define Bricolage Grotesque locally
+const fontDisplay = localFont({
+  src: [
+    {
+      path: "../public/fonts/bricolage-grotesque/BricolageGrotesque-Regular.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/bricolage-grotesque/BricolageGrotesque-Medium.ttf",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/bricolage-grotesque/BricolageGrotesque-SemiBold.ttf",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/bricolage-grotesque/BricolageGrotesque-Bold.ttf",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/bricolage-grotesque/BricolageGrotesque-ExtraBold.ttf",
+      weight: "800",
+      style: "normal",
+    },
+  ],
+  variable: "--font-display",
+  display: "swap",
+})
 
-const fontMono = Geist_Mono({
-  subsets: ["latin"],
+// Define DM Sans locally
+const fontSans = localFont({
+  src: [
+    {
+      path: "../public/fonts/dm-sans/DMSans-Light.ttf",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/dm-sans/DMSans-Regular.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/dm-sans/DMSans-Medium.ttf",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/dm-sans/DMSans-SemiBold.ttf",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/dm-sans/DMSans-Bold.ttf",
+      weight: "700",
+      style: "normal",
+    },
+  ],
+  variable: "--font-sans",
+  display: "swap",
+})
+
+// Define DM Mono locally
+const fontMono = localFont({
+  src: [
+    {
+      path: "../public/fonts/dm-mono/DMMono-Light.ttf",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/dm-mono/DMMono-Regular.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/dm-mono/DMMono-Medium.ttf",
+      weight: "500",
+      style: "normal",
+    },
+  ],
   variable: "--font-mono",
+  display: "swap",
 })
 
 export default function RootLayout({
@@ -20,9 +101,15 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={cn("antialiased", fontMono.variable, "font-sans", inter.variable)}
+      className={cn(
+        "antialiased",
+        fontDisplay.variable,
+        fontSans.variable,
+        fontMono.variable,
+        "font-sans"
+      )}
     >
-      <body>
+      <body suppressHydrationWarning>
         <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>

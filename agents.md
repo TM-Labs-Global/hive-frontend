@@ -220,3 +220,15 @@ When two implementations are possible, choose in this order:
 2. Shared project primitive (requestApi, shared hooks, ui primitives, context)
 3. Smaller change surface
 4. Stronger type safety and clearer failure handling
+
+## 14) Division of Labor (UI vs. Logic)
+
+The AI Agent is responsible for **UI/UX and Visual Flow** only.
+The Logic Engineer is responsible for **Data Fetching, Hooks, and API Integration**.
+
+Agent Rules:
+- Focus on high-fidelity UI implementation using established design system primitives.
+- Build complete interaction flows (modals, sidebars, page transitions) using mock data or static states.
+- Leave clear "logic placeholders" (comments or stub functions) for where API hooks should be integrated.
+- Do NOT implement actual `useQuery` or `useMutation` logic unless specifically instructed for a demo/prototype.
+- Ensure all components are "logic-ready" by exposing the necessary props for data and events.

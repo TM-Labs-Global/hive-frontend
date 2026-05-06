@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Hive — PRD v1.0 | Takeout Media</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --orange: #F55B00;
+  --orange-light: #FF7A29;
+  --orange-pale: #FFF3EC;
+  --orange-deep: #C44500;
+  --black: #0D0D0D;
+  --gray-900: #1A1A1A;
+  --gray-800: #2A2A2A;
+  --gray-700: #3D3D3D;
+  --gray-600: #555555;
+  --gray-500: #777777;
+  --gray-300: #BEBEBE;
+  --gray-200: #D9D9D9;
+  --gray-100: #F3F3F3;
+  --white: #FFFFFF;
+  --font-d: 'Syne', sans-serif;
+  --font-b: 'DM Sans', sans-serif;
+  --green: #22C55E;
+  --red: #EF4444;
+}
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-b); background: var(--white); color: var(--black); font-size: 15px; line-height: 1.7; }
+
+/* ── NAV ── */
+.nav { position: sticky; top: 0; z-index: 200; background: var(--black); border-bottom: 2px solid var(--orange); display: flex; align-items: center; padding: 0 2.5rem; height: 54px; gap: 2rem; }
+.nav-logo { font-family: var(--font-d); font-weight: 800; font-size: 17px; color: var(--white); white-space: nowrap; }
+.nav-logo em { color: var(--orange); font-style: normal; }
+.nav-links { display: flex; gap: 0; overflow-x: auto; scrollbar-width: none; flex: 1; }
+.nav-links::-webkit-scrollbar { display: none; }
+.nav-links a { font-size: 11px; font-weight: 500; color: var(--gray-300); text-decoration: none; padding: 0 10px; white-space: nowrap; text-transform: uppercase; letter-spacing: 0.5px; transition: color .2s; }
+.nav-links a:hover { color: var(--orange-light); }
+.nav-tag { background: var(--orange); color: var(--white); font-size: 10px; font-weight: 700; padding: 3px 10px; border-radius: 20px; white-space: nowrap; letter-spacing: 0.5px; }
+
+/* ── HERO ── */
+.hero { background: var(--black); padding: 64px 2.5rem 52px; position: relative; overflow: hidden; }
+.hero::before { content: ''; position: absolute; top: -80px; right: -100px; width: 460px; height: 460px; border-radius: 50%; background: var(--orange); opacity: 0.06; pointer-events: none; }
+.hero::after { content: ''; position: absolute; bottom: -60px; left: 5%; width: 300px; height: 300px; border-radius: 50%; background: var(--orange); opacity: 0.035; pointer-events: none; }
+.hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; background: rgba(245,91,0,0.15); border: 1px solid rgba(245,91,0,0.3); border-radius: 20px; padding: 5px 14px; margin-bottom: 22px; }
+.hero-eyebrow span { font-size: 11px; font-weight: 600; color: var(--orange-light); letter-spacing: 0.8px; text-transform: uppercase; }
+.hero h1 { font-family: var(--font-d); font-size: clamp(34px, 5.5vw, 58px); font-weight: 800; color: var(--white); line-height: 1.04; letter-spacing: -1.2px; max-width: 760px; margin-bottom: 14px; }
+.hero h1 em { color: var(--orange); font-style: normal; }
+.hero-sub { color: var(--gray-300); font-size: 15.5px; font-weight: 300; max-width: 580px; line-height: 1.65; margin-bottom: 38px; }
+.hero-meta { display: flex; flex-wrap: wrap; gap: 28px; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 28px; }
+.meta-item { display: flex; flex-direction: column; gap: 3px; }
+.meta-label { font-size: 10px; color: var(--gray-500); text-transform: uppercase; letter-spacing: 1px; font-weight: 500; }
+.meta-value { font-size: 13px; color: var(--gray-200); font-weight: 400; }
+
+/* ── WRAPPER ── */
+.wrap { max-width: 900px; margin: 0 auto; padding: 0 2.5rem 5rem; }
+
+/* ── SECTION ── */
+.section { padding: 52px 0 0; }
+.sec-hd { display: flex; align-items: center; gap: 14px; margin-bottom: 30px; padding-bottom: 18px; border-bottom: 1px solid var(--gray-100); }
+.sec-n { font-family: var(--font-d); font-size: 11px; font-weight: 700; color: var(--orange); letter-spacing: 1.2px; text-transform: uppercase; min-width: 30px; }
+.sec-t { font-family: var(--font-d); font-size: 24px; font-weight: 700; color: var(--black); letter-spacing: -0.4px; }
+.divider { height: 1px; background: var(--gray-100); margin-top: 52px; }
+
+/* ── TEXT ── */
+.prose { font-size: 14.5px; color: var(--gray-700); line-height: 1.78; }
+.prose p { margin-bottom: 14px; }
+.prose strong { color: var(--black); font-weight: 500; }
+
+/* ── CALLOUT ── */
+.callout { border-left: 3px solid var(--orange); background: var(--orange-pale); padding: 15px 20px; border-radius: 0 10px 10px 0; margin: 22px 0; font-size: 14px; color: var(--gray-800); line-height: 1.65; }
+.callout strong { color: var(--orange-deep); }
+
+/* ── COMPARABLE TOOLS ── */
+.tools-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin: 22px 0; }
+.tool-card { border: 1px solid var(--gray-200); border-radius: 10px; padding: 18px; transition: border-color .2s; }
+.tool-card:hover { border-color: var(--orange); }
+.tool-name { font-family: var(--font-d); font-size: 15px; font-weight: 700; color: var(--black); margin-bottom: 4px; }
+.tool-tag { display: inline-block; background: var(--gray-100); color: var(--gray-600); font-size: 10px; font-weight: 600; padding: 2px 9px; border-radius: 10px; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 10px; }
+.tool-desc { font-size: 12.5px; color: var(--gray-600); line-height: 1.55; }
+.tool-diff { font-size: 12px; color: var(--orange-deep); font-weight: 500; margin-top: 8px; padding-top: 8px; border-top: 1px solid var(--gray-100); }
+
+/* ── HOW IT WORKS (for client & agency journey) ── */
+.journey { margin: 28px 0; }
+.journey-label { font-family: var(--font-d); font-size: 11px; font-weight: 700; color: var(--orange); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 16px; }
+.journey-steps { display: flex; flex-direction: column; gap: 0; }
+.j-step { display: flex; gap: 18px; padding-bottom: 0; position: relative; }
+.j-step:not(:last-child) .j-line { position: absolute; left: 15px; top: 36px; bottom: 0; width: 2px; background: linear-gradient(to bottom, var(--orange), var(--gray-200)); }
+.j-num { width: 32px; height: 32px; min-width: 32px; border-radius: 50%; background: var(--orange); color: var(--white); font-family: var(--font-d); font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; z-index: 1; margin-top: 2px; }
+.j-content { padding-bottom: 28px; flex: 1; }
+.j-title { font-family: var(--font-d); font-size: 14.5px; font-weight: 700; color: var(--black); margin-bottom: 4px; }
+.j-desc { font-size: 13.5px; color: var(--gray-600); line-height: 1.6; }
+.j-desc strong { color: var(--black); font-weight: 500; }
+
+/* ── ROLE TABLE ── */
+.role-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin: 22px 0; }
+.role-card { border-radius: 12px; padding: 20px; border: 1px solid var(--gray-200); }
+.role-card.dark { background: var(--black); border-color: var(--orange); }
+.role-card.light { background: var(--gray-100); }
+.role-card.warm { background: var(--orange-pale); border-color: rgba(245,91,0,0.2); }
+.role-icon-wrap { width: 34px; height: 34px; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 10px; font-size: 15px; }
+.dark .role-icon-wrap { background: rgba(245,91,0,0.2); }
+.light .role-icon-wrap { background: var(--gray-200); }
+.warm .role-icon-wrap { background: rgba(245,91,0,0.15); }
+.role-badge { display: inline-block; font-size: 9.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; padding: 2px 9px; border-radius: 10px; margin-bottom: 8px; }
+.dark .role-badge { background: var(--orange); color: var(--white); }
+.light .role-badge { background: var(--gray-800); color: var(--white); }
+.warm .role-badge { background: var(--orange); color: var(--white); }
+.role-name { font-family: var(--font-d); font-size: 14px; font-weight: 700; margin-bottom: 12px; }
+.dark .role-name { color: var(--white); }
+.light .role-name, .warm .role-name { color: var(--black); }
+.perm-list { display: flex; flex-direction: column; gap: 5px; }
+.perm-item { display: flex; align-items: flex-start; gap: 8px; font-size: 12.5px; line-height: 1.45; }
+.dark .perm-item { color: var(--gray-300); }
+.light .perm-item, .warm .perm-item { color: var(--gray-700); }
+.dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; margin-top: 5px; }
+.yes { background: var(--green); }
+.no { background: var(--red); }
+
+/* ── LIFECYCLE STRIP ── */
+.lc-wrap { overflow-x: auto; margin: 26px 0; padding-bottom: 6px; }
+.lc-track { display: flex; min-width: 620px; }
+.lc-node { flex: 1; text-align: center; position: relative; }
+.lc-node:not(:last-child)::after { content: '›'; position: absolute; right: -6px; top: 26px; color: var(--orange); font-size: 20px; font-weight: 700; z-index: 2; }
+.lc-pill { display: inline-block; padding: 8px 6px; width: 90%; border-top: 3px solid var(--orange); background: var(--gray-100); border-radius: 0 0 8px 8px; }
+.lc-n { font-family: var(--font-d); font-size: 18px; font-weight: 800; color: var(--orange); display: block; line-height: 1.1; }
+.lc-label { font-size: 10.5px; font-weight: 500; color: var(--gray-600); display: block; margin-top: 2px; }
+.lc-who { font-size: 9.5px; color: var(--orange-deep); font-weight: 600; margin-top: 4px; display: block; }
+
+/* ── MODULE CARDS (overview) ── */
+.mod-overview { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin: 22px 0; }
+.mod-ov-card { border: 1px solid var(--gray-200); border-radius: 10px; padding: 18px; transition: border-color .2s, transform .15s; cursor: default; }
+.mod-ov-card:hover { border-color: var(--orange); transform: translateY(-2px); }
+.mod-ov-num { font-size: 10px; font-weight: 700; color: var(--orange); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 7px; }
+.mod-ov-name { font-family: var(--font-d); font-size: 13.5px; font-weight: 700; color: var(--black); margin-bottom: 6px; }
+.mod-ov-desc { font-size: 12px; color: var(--gray-500); line-height: 1.5; }
+
+/* ── MODULE DETAIL BLOCKS ── */
+.mod-block { margin-bottom: 42px; border-radius: 12px; overflow: hidden; border: 1px solid var(--gray-200); }
+.mod-head { background: var(--black); padding: 18px 24px; display: flex; align-items: center; gap: 14px; border-left: 4px solid var(--orange); }
+.mod-head-n { font-size: 10px; font-weight: 700; color: var(--orange); text-transform: uppercase; letter-spacing: 1px; }
+.mod-head-t { font-family: var(--font-d); font-size: 18px; font-weight: 700; color: var(--white); }
+.mod-body { padding: 24px; }
+.mod-intro { font-size: 14px; color: var(--gray-700); line-height: 1.72; margin-bottom: 20px; }
+.feat { display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px; }
+.feat-item { display: flex; align-items: flex-start; gap: 10px; font-size: 13.5px; color: var(--gray-800); line-height: 1.55; }
+.feat-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--orange); margin-top: 6px; flex-shrink: 0; }
+
+/* ── TWO-COL ── */
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 18px 0; }
+@media (max-width: 580px) { .two-col { grid-template-columns: 1fr; } }
+.info-box { background: var(--gray-100); border-radius: 10px; padding: 18px; }
+.info-box-t { font-size: 10px; font-weight: 700; color: var(--orange); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+.info-box ul { padding-left: 16px; }
+.info-box li { font-size: 13px; color: var(--gray-700); margin-bottom: 4px; line-height: 1.5; }
+
+/* ── EVENTS TABLE ── */
+.ev-table { border: 1px solid var(--gray-200); border-radius: 10px; overflow: hidden; margin: 22px 0; }
+.ev-row { display: grid; grid-template-columns: 220px 1fr; border-bottom: 1px solid var(--gray-100); }
+.ev-row:last-child { border-bottom: none; }
+.ev-row.hdr { background: var(--black); }
+.ev-trigger, .ev-action { padding: 12px 16px; font-size: 13px; }
+.ev-trigger { border-right: 1px solid var(--gray-100); color: var(--gray-800); }
+.hdr .ev-trigger { color: var(--orange); font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; border-right-color: rgba(255,255,255,0.06); }
+.ev-action { color: var(--gray-700); }
+.hdr .ev-action { color: var(--gray-300); font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; }
+
+/* ── EDGE CASES ── */
+.edge-list { display: flex; flex-direction: column; gap: 12px; margin: 22px 0; }
+.edge-card { border: 1px solid var(--gray-200); border-radius: 10px; overflow: hidden; }
+.edge-hd { background: var(--gray-100); padding: 11px 18px; display: flex; align-items: center; gap: 12px; }
+.edge-icon { width: 28px; height: 28px; border-radius: 6px; background: var(--orange); color: var(--white); font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.edge-t { font-family: var(--font-d); font-size: 14px; font-weight: 700; color: var(--black); }
+.edge-bd { padding: 14px 18px; font-size: 13.5px; color: var(--gray-700); line-height: 1.68; }
+
+/* ── MVP ── */
+.mvp-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 22px 0; }
+@media (max-width: 540px) { .mvp-cols { grid-template-columns: 1fr; } }
+.mvp-col { border: 1px solid var(--gray-200); border-radius: 10px; overflow: hidden; }
+.mvp-col-hd { padding: 13px 18px; font-family: var(--font-d); font-size: 13px; font-weight: 700; }
+.p1 .mvp-col-hd { background: var(--black); color: var(--orange); border-bottom: 2px solid var(--orange); }
+.p2 .mvp-col-hd { background: var(--gray-100); color: var(--gray-600); border-bottom: 2px solid var(--gray-300); }
+.mvp-item { padding: 9px 18px; border-bottom: 1px solid var(--gray-100); font-size: 13px; display: flex; gap: 9px; align-items: flex-start; }
+.mvp-item:last-child { border-bottom: none; }
+.mvp-d { width: 6px; height: 6px; border-radius: 50%; margin-top: 6px; flex-shrink: 0; }
+.p1 .mvp-d { background: var(--orange); }
+.p2 .mvp-d { background: var(--gray-300); }
+.mvp-item span { color: var(--gray-700); line-height: 1.5; }
+
+/* ── PILL ROW ── */
+.pills { display: flex; flex-wrap: wrap; gap: 7px; margin: 14px 0; }
+.pill { border: 1px solid var(--gray-200); border-radius: 20px; padding: 4px 13px; font-size: 12.5px; color: var(--gray-600); font-weight: 500; }
+.pill.o { background: var(--orange); color: var(--white); border-color: var(--orange); }
+
+/* ── KPI GRID ── */
+.kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin: 22px 0; }
+.kpi { background: var(--gray-100); border-radius: 10px; padding: 18px 16px; border: 1px solid transparent; transition: border-color .2s; }
+.kpi:hover { border-color: var(--orange); }
+.kpi-v { font-family: var(--font-d); font-size: 28px; font-weight: 800; color: var(--orange); line-height: 1; margin-bottom: 6px; }
+.kpi-l { font-size: 12px; color: var(--gray-500); line-height: 1.45; }
+
+/* ── FOOTER ── */
+footer { background: var(--black); padding: 36px 2.5rem; text-align: center; border-top: 2px solid var(--orange); }
+.footer-logo { font-family: var(--font-d); font-size: 22px; font-weight: 800; color: var(--white); margin-bottom: 8px; }
+.footer-logo em { color: var(--orange); font-style: normal; }
+.footer-sub { font-size: 12px; color: var(--gray-500); }
+
+/* ── PRINT / SCROLL ── */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-thumb { background: var(--orange); border-radius: 4px; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-logo">The <em>Hive</em></div>
+  <div class="nav-links">
+    <a href="#overview">Overview</a>
+    <a href="#inspiration">Inspiration</a>
+    <a href="#goals">Goals</a>
+    <a href="#who">Who Uses It</a>
+    <a href="#client-journey">Client Journey</a>
+    <a href="#agency-journey">Agency Side</a>
+    <a href="#lifecycle">Content Lifecycle</a>
+    <a href="#modules">Modules</a>
+    <a href="#events">Notifications</a>
+    <a href="#edge">What If…</a>
+    <a href="#mvp">Build Order</a>
+  </div>
+  <span class="nav-tag">PRD v1.1</span>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-eyebrow"><span>Product Requirements Document — Takeout Media Internal</span></div>
+  <h1>The <em>Hive</em> — Takeout Media's<br>Client &amp; Brand OS</h1>
+  <p class="hero-sub">A web platform for Takeout Media to manage every client relationship — from the moment they sign up and pick a plan, all the way to published content and analytics. Clients get a clean space to review work, leave feedback, and approve posts. The Takeout team gets a full dashboard to track accounts, communicate, and deliver.</p>
+  <div class="hero-meta">
+    <div class="meta-item"><span class="meta-label">Product Name</span><span class="meta-value">The Hive</span></div>
+    <div class="meta-item"><span class="meta-label">Built For</span><span class="meta-value">Takeout Media (Internal + Client-facing)</span></div>
+    <div class="meta-item"><span class="meta-label">Type</span><span class="meta-value">Agency Management + Client Portal</span></div>
+    <div class="meta-item"><span class="meta-label">Inspired By</span><span class="meta-value">Planable · Sendible · SocialPilot</span></div>
+    <div class="meta-item"><span class="meta-label">Version</span><span class="meta-value">v1.1 — April 2026</span></div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <!-- SECTION 1: OVERVIEW -->
+  <div class="section" id="overview">
+    <div class="sec-hd"><span class="sec-n">01</span><span class="sec-t">What Is The Hive?</span></div>
+    <div class="prose">
+      <p>The Hive is a custom-built web platform that runs Takeout Media's operations from end to end. Think of it as two things working together: a <strong>back-office dashboard</strong> for the Takeout team to manage clients, track accounts, and organize content — and a <strong>client-facing portal</strong> where brands can log in, see what's being worked on for them, and give approvals.</p>
+      <p>Right now, most agencies juggle client approvals over WhatsApp, revisions over email, and content scheduling in a separate tool. The Hive puts everything in one place — so nothing slips through the cracks and clients always feel in the loop.</p>
+    </div>
+    <div class="callout"><strong>The simple version:</strong> Clients sign up, pick a plan, connect their social accounts, and review content Takeout uploads for them. Takeout's team sees everything from their dashboard — who's onboarded, what's pending, what needs attention — and they communicate and deliver through the same platform.</div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- SECTION 2: INSPIRATION -->
+  <div class="section" id="inspiration">
+    <div class="sec-hd"><span class="sec-n">02</span><span class="sec-t">What Already Exists (and What The Hive Does Differently)</span></div>
+    <div class="prose">
+      <p>Several tools in the market already solve parts of this problem. Looking at them shows both what works and where the gaps are — gaps that The Hive is specifically designed to fill for Takeout Media's workflow.</p>
+    </div>
+    <div class="tools-row">
+      <div class="tool-card">
+        <div class="tool-name">Planable</div>
+        <div class="tool-tag">Closest match</div>
+        <div class="tool-desc">Built for agencies managing client content approvals. Teams create posts, clients get a clean view to approve or comment. Very visual and easy for clients to use.</div>
+        <div class="tool-diff">Missing: client onboarding, plan selection, billing, or a Takeout-team dashboard. It's a content tool, not a full CRM + operations platform.</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-name">Sendible</div>
+        <div class="tool-tag">Agency-focused</div>
+        <div class="tool-desc">Social scheduling platform built for agencies managing multiple clients. Supports white-label client reports and team workflows.</div>
+        <div class="tool-diff">Missing: built-in client onboarding flow, package selection, or a clear sales-to-delivery pipeline for the agency itself.</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-name">SocialPilot</div>
+        <div class="tool-tag">Affordable multi-brand</div>
+        <div class="tool-desc">Manages multiple client accounts and social profiles from one place. Good for scheduling and analytics at a reasonable price point.</div>
+        <div class="tool-diff">Missing: client-side portal where clients can self-onboard, pick plans, and manage their team. It's an internal tool only.</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-name">CoSchedule</div>
+        <div class="tool-tag">Content calendar</div>
+        <div class="tool-desc">Centralizes content planning, scheduling, and task management into a single calendar. Strong project management angle for content teams.</div>
+        <div class="tool-diff">Missing: a client portal, client onboarding, or anything that lets the end client interact with the work being done for them.</div>
+      </div>
+    </div>
+    <div class="callout"><strong>What The Hive adds:</strong> A complete pipeline — from a new client discovering Takeout Media, picking a package, connecting their accounts, all the way to seeing their published content and analytics. It's Planable's approval experience + a CRM for the agency + a proper client onboarding flow, all in one.</div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- SECTION 3: GOALS -->
+  <div class="section" id="goals">
+    <div class="sec-hd"><span class="sec-n">03</span><span class="sec-t">What This Platform Needs to Achieve</span></div>
+    <div class="prose"><p>These aren't vague ambitions — they're the real things The Hive needs to get right for Takeout Media to run smoothly and impress clients.</p></div>
+    <div class="kpi-grid">
+      <div class="kpi"><div class="kpi-v">0</div><div class="kpi-l">Unapproved posts going live — ever</div></div>
+      <div class="kpi"><div class="kpi-v">1</div><div class="kpi-l">Place for client communication, not scattered across apps</div></div>
+      <div class="kpi"><div class="kpi-v">&lt;5min</div><div class="kpi-l">For a client to sign up and understand what they're getting</div></div>
+      <div class="kpi"><div class="kpi-v">100%</div><div class="kpi-l">Content tracked — no deliverables lost or forgotten</div></div>
+      <div class="kpi"><div class="kpi-v">48h</div><div class="kpi-l">Max time a client approval should sit without a nudge</div></div>
+      <div class="kpi"><div class="kpi-v">1-click</div><div class="kpi-l">Client experience for approving content — as simple as possible</div></div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- SECTION 4: WHO USES IT -->
+  <div class="section" id="who">
+    <div class="sec-hd"><span class="sec-n">04</span><span class="sec-t">Who Uses The Hive</span></div>
+    <div class="prose"><p>There are two sides to this platform. The Takeout Media team operates from the back-end dashboard. Clients operate from their portal. Each side has different roles with different levels of access.</p></div>
+    <div class="role-grid">
+      <!-- Internal -->
+      <div class="role-card dark">
+        <div class="role-icon-wrap">★</div>
+        <div class="role-badge">Takeout Media</div>
+        <div class="role-name">Account Manager</div>
+        <div class="perm-list">
+          <div class="perm-item"><span class="dot yes"></span>Sees all clients and their onboarding status</div>
+          <div class="perm-item"><span class="dot yes"></span>Can onboard clients and set up their brands directly on their behalf</div>
+          <div class="perm-item"><span class="dot yes"></span>Can connect and manage social media accounts for any brand</div>
+          <div class="perm-item"><span class="dot yes"></span>Communicates with clients through the platform</div>
+          <div class="perm-item"><span class="dot yes"></span>Helps close deals and confirms plan activation</div>
+          <div class="perm-item"><span class="dot yes"></span>Reviews work before it goes to the client</div>
+          <div class="perm-item"><span class="dot yes"></span>Sends content to client for approval</div>
+          <div class="perm-item"><span class="dot no"></span>Content must still be approved by client before publishing</div>
+        </div>
+      </div>
+      <div class="role-card light">
+        <div class="role-icon-wrap">✏</div>
+        <div class="role-badge">Takeout Media</div>
+        <div class="role-name">Content Team (Designers, Copywriters, Strategists)</div>
+        <div class="perm-list">
+          <div class="perm-item"><span class="dot yes"></span>See brand briefs and goals</div>
+          <div class="perm-item"><span class="dot yes"></span>Upload content and drafts for review</div>
+          <div class="perm-item"><span class="dot yes"></span>Leave internal notes on deliverables</div>
+          <div class="perm-item"><span class="dot no"></span>Cannot send anything directly to the client</div>
+          <div class="perm-item"><span class="dot no"></span>Account Manager reviews first — always</div>
+        </div>
+      </div>
+      <!-- Client -->
+      <div class="role-card warm">
+        <div class="role-icon-wrap">◆</div>
+        <div class="role-badge">Client Side</div>
+        <div class="role-name">Client Admin (Brand Owner)</div>
+        <div class="perm-list">
+          <div class="perm-item"><span class="dot yes"></span>Signs up and selects a plan</div>
+          <div class="perm-item"><span class="dot yes"></span>Onboards the brand and connects social accounts</div>
+          <div class="perm-item"><span class="dot yes"></span>The only person who can approve content for posting</div>
+          <div class="perm-item"><span class="dot yes"></span>Manages billing and invoice history</div>
+          <div class="perm-item"><span class="dot yes"></span>Invites team members and sets their permissions</div>
+          <div class="perm-item"><span class="dot no"></span>Cannot see the Takeout team's internal drafts or notes</div>
+        </div>
+      </div>
+      <div class="role-card warm">
+        <div class="role-icon-wrap">○</div>
+        <div class="role-badge">Client Side</div>
+        <div class="role-name">Client Team Member (e.g. Marketing Staff)</div>
+        <div class="perm-list">
+          <div class="perm-item"><span class="dot yes"></span>Views content that's been submitted for review</div>
+          <div class="perm-item"><span class="dot yes"></span>Leaves comments and feedback on content</div>
+          <div class="perm-item"><span class="dot yes"></span>Sees the content calendar and analytics</div>
+          <div class="perm-item"><span class="dot no"></span>Cannot approve content — that's the Admin's job</div>
+          <div class="perm-item"><span class="dot no"></span>Cannot change billing or account settings</div>
+        </div>
+      </div>
+    </div>
+    <div class="callout"><strong>Key rules to remember:</strong> On the client side, only the Client Admin can approve content for posting. On the Takeout side, the Account Manager is the gatekeeper — no content reaches the client without their review first. Importantly, Account Managers aren't just passive reviewers — they can also onboard clients, set up brands, and connect social accounts themselves. This means the Takeout team can get a client fully set up even if the client needs hand-holding, without waiting on the client to do it themselves.</div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- SECTION 5: CLIENT JOURNEY -->
+  <div class="section" id="client-journey">
+    <div class="sec-hd"><span class="sec-n">05</span><span class="sec-t">The Client Journey — Step by Step</span></div>
+    <div class="prose"><p>Here's what a client experiences from the moment they find Takeout Media to the moment they're seeing published results. Note that while clients can do every step themselves, the Account Manager can also complete any of these steps on their behalf — useful when a client needs extra support getting set up.</p></div>
+    <div class="journey">
+      <div class="journey-label">What the client does</div>
+      <div class="journey-steps">
+        <div class="j-step"><div class="j-line"></div><div class="j-num">1</div><div class="j-content"><div class="j-title">Signs up and creates an account</div><div class="j-desc">The client lands on The Hive and registers with their email. They fill in basic info about their business. This is the entry point — clean, fast, and welcoming.</div></div></div>
+        <div class="j-step"><div class="j-line"></div><div class="j-num">2</div><div class="j-content"><div class="j-title">Picks a plan that fits their budget and goals</div><div class="j-desc">They choose from Takeout Media's service packages — each showing clearly <strong>what's included</strong> (number of posts, platforms, reports, etc.) and the price. They pay or start a trial.</div></div></div>
+        <div class="j-step"><div class="j-line"></div><div class="j-num">3</div><div class="j-content"><div class="j-title">Onboards their brand</div><div class="j-desc">They fill in their brand profile — name, logo, brand colours, tone of voice, target audience, and what they want to achieve. This brief feeds directly into the Takeout team's workflow. <strong>If the client needs help, the Account Manager can fill this in on their behalf.</strong></div></div></div>
+        <div class="j-step"><div class="j-line"></div><div class="j-num">4</div><div class="j-content"><div class="j-title">Connects their social media accounts</div><div class="j-desc">They log in with Instagram, Facebook, X, or LinkedIn to connect the accounts they want Takeout to manage. The platform stores these securely — <strong>no sharing passwords</strong>, it uses official login (OAuth). <strong>The Account Manager can also do this connection on the client's behalf</strong> if needed.</div></div></div>
+        <div class="j-step"><div class="j-line"></div><div class="j-num">5</div><div class="j-content"><div class="j-title">Adds their team (optional)</div><div class="j-desc">If they have a marketing manager or comms team, they can invite them in as viewers. The Client Admin keeps full control, but the team can see what's happening and leave comments.</div></div></div>
+        <div class="j-step"><div class="j-line"></div><div class="j-num">6</div><div class="j-content"><div class="j-title">Receives content for review</div><div class="j-desc">When the Takeout team uploads content, the client gets notified. They log in, see the post exactly as it will look on the platform, and can <strong>approve</strong>, <strong>request changes</strong>, or leave a comment.</div></div></div>
+        <div class="j-step"><div class="j-line"></div><div class="j-num">7</div><div class="j-content"><div class="j-title">Watches content go live and tracks results</div><div class="j-desc">Approved content is scheduled and published. The client sees their analytics dashboard — reach, engagement, follower growth — all updating automatically.</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- SECTION 6: AGENCY JOURNEY -->
+  <div class="section" id="agency-journey">
+    <div class="sec-hd"><span class="sec-n">06</span><span class="sec-t">The Takeout Media Side — How the Team Uses It</span></div>
+    <div class="prose"><p>While the client is going through their journey, here's what the Takeout team sees and does on their dashboard.</p></div>
+    <div class="journey">
+      <div class="journey-label">What the Takeout team does</div>
+      <div class="journey-steps">
+        <div class="j-step"><div class="j-line"></div><div class="j-num">1</div><div class="j-content"><div class="j-title">Sees new signups — or onboards a client themselves</div><div class="j-desc">When a client signs up independently, they appear on the Takeout dashboard automatically. But the Account Manager can also <strong>create a client account themselves</strong> — useful for clients who prefer a white-glove setup or aren't tech-comfortable. Either way, the client ends up in the system.</div></div></div>
+        <div class="j-step"><div class="j-line"></div><div class="j-num">2</div><div class="j-content"><div class="j-title">Sets up the brand and connects social accounts</div><div class="j-desc">The Account Manager can <strong>create the brand profile</strong> — name, logo, audience, goals, tone — and <strong>connect the client's social media accounts</strong> on their behalf. This means a new client can be fully set up and ready to work within the same session as the onboarding call, without waiting on the client to do it.</div></div></div>
+        <div class="j-step"><div class="j-line"></div><div class="j-num">3</div><div class="j-content"><div class="j-title">Reviews the brief and communicates with the client</div><div class="j-desc">Once the brand is set up, the Account Manager reviews the brief, confirms scope with the client via the platform's messaging, and sets expectations before the content team begins work.</div></div></div>
+        <div class="j-step"><div class="j-line"></div><div class="j-num">4</div><div class="j-content"><div class="j-title">The content team starts creating</div><div class="j-desc">Designers, copywriters, and strategists are assigned to the brand. They upload content — captions, visuals, videos — and add internal notes. The Account Manager can see everything but the client sees nothing yet.</div></div></div>
+        <div class="j-step"><div class="j-line"></div><div class="j-num">5</div><div class="j-content"><div class="j-title">Account Manager reviews and sends to client</div><div class="j-desc">When the work is ready, the Account Manager reviews it internally and <strong>deliberately pushes it to the client's view</strong>. This is a manual step — ensuring quality control before the client ever sees anything.</div></div></div>
+        <div class="j-step"><div class="j-line"></div><div class="j-num">6</div><div class="j-content"><div class="j-title">Manages approvals and feedback</div><div class="j-desc">If the client approves — great, the content gets scheduled. If they request changes, the feedback lands back with the content team. The Account Manager tracks how many revision rounds are happening.</div></div></div>
+        <div class="j-step"><div class="j-line"></div><div class="j-num">7</div><div class="j-content"><div class="j-title">Schedules, publishes, and reports</div><div class="j-desc">Once approved, the Account Manager schedules the post. The system publishes it at the right time. Analytics pull in automatically and both sides can see the results.</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- SECTION 7: LIFECYCLE -->
+  <div class="section" id="lifecycle">
+    <div class="sec-hd"><span class="sec-n">07</span><span class="sec-t">How Content Moves Through The System</span></div>
+    <div class="prose"><p>Every piece of content — a post, a video, a carousel — goes through a defined set of stages. This means everyone always knows where things stand, and nothing can accidentally skip a step.</p></div>
+    <div class="lc-wrap">
+      <div class="lc-track">
+        <div class="lc-node"><div class="lc-pill"><span class="lc-n">1</span><span class="lc-label">Draft</span><span class="lc-who">Content team uploads</span></div></div>
+        <div class="lc-node"><div class="lc-pill"><span class="lc-n">2</span><span class="lc-label">Internal Review</span><span class="lc-who">Team checks it internally</span></div></div>
+        <div class="lc-node"><div class="lc-pill"><span class="lc-n">3</span><span class="lc-label">Account Mgr</span><span class="lc-label">Review</span><span class="lc-who">Account Mgr approves internally</span></div></div>
+        <div class="lc-node"><div class="lc-pill"><span class="lc-n">4</span><span class="lc-label">Client Review</span><span class="lc-who">Client sees &amp; responds</span></div></div>
+        <div class="lc-node"><div class="lc-pill"><span class="lc-n">5</span><span class="lc-label">Approved</span><span class="lc-who">Client Admin approves</span></div></div>
+        <div class="lc-node"><div class="lc-pill"><span class="lc-n">6</span><span class="lc-label">Scheduled</span><span class="lc-who">Account Mgr sets date</span></div></div>
+        <div class="lc-node"><div class="lc-pill"><span class="lc-n">7</span><span class="lc-label">Published</span><span class="lc-who">System publishes it</span></div></div>
+      </div>
+    </div>
+    <div class="two-col" style="margin-top: 20px;">
+      <div class="info-box">
+        <div class="info-box-t">What the client can see at each stage</div>
+        <ul>
+          <li><strong>Stages 1–3:</strong> Nothing — client sees no drafts</li>
+          <li><strong>Stage 4:</strong> First time client sees the content</li>
+          <li><strong>Stage 5–7:</strong> Fully visible in their portal</li>
+          <li>Client can only comment on stages 4 and 5</li>
+        </ul>
+      </div>
+      <div class="info-box">
+        <div class="info-box-t">What happens if content is rejected</div>
+        <ul>
+          <li>Client clicks "Request changes" and adds a comment</li>
+          <li>Content goes back to Draft (stage 1)</li>
+          <li>Content team and Account Manager are notified</li>
+          <li>After 3 rejection rounds, system flags it for Account Mgr to review</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- SECTION 8: MODULES -->
+  <div class="section" id="modules">
+    <div class="sec-hd"><span class="sec-n">08</span><span class="sec-t">Platform Modules — What Gets Built</span></div>
+    <div class="prose"><p>The Hive is made up of these core modules. Each one has a clear job. Here's a plain-English breakdown of what each does and why it matters.</p></div>
+
+    <!-- Module overview grid -->
+    <div class="mod-overview">
+      <div class="mod-ov-card"><div class="mod-ov-num">M-01</div><div class="mod-ov-name">Client Sign-Up & Onboarding</div><div class="mod-ov-desc">How new clients join, pick a plan, and set up their brand.</div></div>
+      <div class="mod-ov-card"><div class="mod-ov-num">M-02</div><div class="mod-ov-name">Brand Setup</div><div class="mod-ov-desc">Clients fill in their brand brief, goals, and guidelines.</div></div>
+      <div class="mod-ov-card"><div class="mod-ov-num">M-03</div><div class="mod-ov-name">Social Account Connection</div><div class="mod-ov-desc">Securely link Instagram, Facebook, X, and LinkedIn.</div></div>
+      <div class="mod-ov-card"><div class="mod-ov-num">M-04</div><div class="mod-ov-name">Plans & Billing</div><div class="mod-ov-desc">Package tiers, payments, and invoice management.</div></div>
+      <div class="mod-ov-card"><div class="mod-ov-num">M-05</div><div class="mod-ov-name">Takeout Team Dashboard</div><div class="mod-ov-desc">Where the Takeout team sees all clients, tasks, and statuses.</div></div>
+      <div class="mod-ov-card"><div class="mod-ov-num">M-06</div><div class="mod-ov-name">Content Upload & Management</div><div class="mod-ov-desc">Where the content team creates and uploads deliverables.</div></div>
+      <div class="mod-ov-card"><div class="mod-ov-num">M-07</div><div class="mod-ov-name">Approval System</div><div class="mod-ov-desc">The review-and-approve flow for both internal and client sign-off.</div></div>
+      <div class="mod-ov-card"><div class="mod-ov-num">M-08</div><div class="mod-ov-name">Content Calendar</div><div class="mod-ov-desc">Visual scheduling view for both the team and the client.</div></div>
+      <div class="mod-ov-card"><div class="mod-ov-num">M-09</div><div class="mod-ov-name">Publishing</div><div class="mod-ov-desc">Automatic posting to social media at the scheduled time.</div></div>
+      <div class="mod-ov-card"><div class="mod-ov-num">M-10</div><div class="mod-ov-name">Client Portal</div><div class="mod-ov-desc">The client's home — approvals, calendar, analytics, team.</div></div>
+      <div class="mod-ov-card"><div class="mod-ov-num">M-11</div><div class="mod-ov-name">Analytics Dashboard</div><div class="mod-ov-desc">Performance data for both the Takeout team and the client.</div></div>
+      <div class="mod-ov-card"><div class="mod-ov-num">M-12</div><div class="mod-ov-name">Messaging & Notifications</div><div class="mod-ov-desc">In-platform communication and smart alerts.</div></div>
+    </div>
+
+    <!-- Detailed modules -->
+
+    <div class="mod-block">
+      <div class="mod-head"><span class="mod-head-n">M-01</span><span class="mod-head-t">Client Sign-Up & Onboarding</span></div>
+      <div class="mod-body">
+        <p class="mod-intro">There are two ways a client gets into the system: they sign up themselves, or the Account Manager creates their account on their behalf. Both paths lead to the same place — a fully set up client record, ready for work. The platform supports whichever route works best for each client.</p>
+        <div class="feat">
+          <div class="feat-item"><span class="feat-dot"></span>Self-serve sign-up: client registers with email, picks a plan, and follows the onboarding checklist themselves</div>
+          <div class="feat-item"><span class="feat-dot"></span>Account Manager-assisted onboarding: AM creates the client account, fills in the brand brief, and sets everything up on the client's behalf — ideal for white-glove onboarding calls</div>
+          <div class="feat-item"><span class="feat-dot"></span>Onboarding checklist guides the process step by step (pick plan → fill brand brief → connect socials → invite team)</div>
+          <div class="feat-item"><span class="feat-dot"></span>Progress indicator shows how much of the setup is complete</div>
+          <div class="feat-item"><span class="feat-dot"></span>Can save progress and return — doesn't have to be done in one go</div>
+          <div class="feat-item"><span class="feat-dot"></span>Takeout team is notified the moment a new client is fully set up, regardless of who completed the setup</div>
+        </div>
+        <div class="callout"><strong>Why this matters:</strong> Not every client is comfortable setting things up on their own. Giving the Account Manager the ability to handle setup ensures no client gets stuck at onboarding — and the Takeout team stays in control of the pace.</div>
+      </div>
+    </div>
+
+    <div class="mod-block">
+      <div class="mod-head"><span class="mod-head-n">M-02 + M-04</span><span class="mod-head-t">Brand Setup & Plans</span></div>
+      <div class="mod-body">
+        <p class="mod-intro">During onboarding, clients tell the platform about their brand and pick the service package that fits their goals and budget. These two things happen together and form the foundation of the entire working relationship.</p>
+        <div class="feat">
+          <div class="feat-item"><span class="feat-dot"></span>Brand form captures: name, industry, logo, brand colours, tone of voice, target audience, platforms to manage, and main goals</div>
+          <div class="feat-item"><span class="feat-dot"></span>Plan selection page shows packages clearly — what's included, what platforms, how many posts per month, whether strategy is included</div>
+          <div class="feat-item"><span class="feat-dot"></span>Clients can manage multiple brands under one account (e.g. a business with two product lines)</div>
+          <div class="feat-item"><span class="feat-dot"></span>Invoice history, billing details, and plan management all accessible to the Client Admin</div>
+          <div class="feat-item"><span class="feat-dot"></span>Takeout admin can manually adjust plans for custom enterprise clients</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mod-block">
+      <div class="mod-head"><span class="mod-head-n">M-03</span><span class="mod-head-t">Social Account Connection</span></div>
+      <div class="mod-body">
+        <p class="mod-intro">Social accounts can be connected by either the client or the Account Manager — whichever is more practical. The connection itself is always secure and uses each platform's official login, so no passwords are ever shared. Once connected, the Account Manager can manage and monitor those accounts on the brand's behalf.</p>
+        <div class="pills">
+          <span class="pill o">Instagram</span><span class="pill o">Facebook</span><span class="pill o">X (Twitter)</span><span class="pill o">LinkedIn</span>
+        </div>
+        <div class="feat">
+          <div class="feat-item"><span class="feat-dot"></span>Client can connect their own accounts via one-click secure login (OAuth) — no passwords shared</div>
+          <div class="feat-item"><span class="feat-dot"></span>Account Manager can also initiate and complete the social account connection on a client's behalf, directly from the brand workspace</div>
+          <div class="feat-item"><span class="feat-dot"></span>Connection status shown clearly for each account — connected, disconnected, or needs refresh</div>
+          <div class="feat-item"><span class="feat-dot"></span>Platform-specific rules are enforced automatically (e.g. Instagram requires a Business account to enable scheduling)</div>
+          <div class="feat-item"><span class="feat-dot"></span>If a connection expires, both the client and Account Manager are notified 7 days in advance</div>
+          <div class="feat-item"><span class="feat-dot"></span>Any content scheduled for a disconnected account is held safely — not deleted — until the connection is restored</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mod-block">
+      <div class="mod-head"><span class="mod-head-n">M-05</span><span class="mod-head-t">Takeout Team Dashboard</span></div>
+      <div class="mod-body">
+        <p class="mod-intro">This is the Takeout Media team's home screen. It gives a bird's-eye view of every client account — what stage they're at, what needs attention, and what's been approved and published. Think of it as a mission control for the agency.</p>
+        <div class="feat">
+          <div class="feat-item"><span class="feat-dot"></span>Client list with status: just signed up, onboarding in progress, active, needs attention</div>
+          <div class="feat-item"><span class="feat-dot"></span>For each client, see: plan they're on, brands set up, social accounts connected, pending approvals</div>
+          <div class="feat-item"><span class="feat-dot"></span>Activity feed: recent client sign-ups, new comments, pending approvals waiting past 48 hours</div>
+          <div class="feat-item"><span class="feat-dot"></span>Quick-access to send a message to any client directly from the dashboard</div>
+          <div class="feat-item"><span class="feat-dot"></span>Filter and search clients by status, plan, or assigned team member</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mod-block">
+      <div class="mod-head"><span class="mod-head-n">M-06</span><span class="mod-head-t">Content Upload & Management</span></div>
+      <div class="mod-body">
+        <p class="mod-intro">This is where the Takeout content team does their work. They upload posts, write captions, attach images and videos, and leave notes for each other — all before anything goes to the client.</p>
+        <div class="feat">
+          <div class="feat-item"><span class="feat-dot"></span>Upload any content type: social post, carousel, video, story, PR release, strategy document</div>
+          <div class="feat-item"><span class="feat-dot"></span>Each piece of content shows a preview of how it will look on the platform before it goes anywhere</div>
+          <div class="feat-item"><span class="feat-dot"></span>Internal comments — the team can discuss the work among themselves, and the client never sees these notes</div>
+          <div class="feat-item"><span class="feat-dot"></span>Version history — if content is revised, old versions are kept for reference</div>
+          <div class="feat-item"><span class="feat-dot"></span>Content is always linked to a specific brand, campaign, and target platform</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mod-block">
+      <div class="mod-head"><span class="mod-head-n">M-07</span><span class="mod-head-t">Approval System</span></div>
+      <div class="mod-body">
+        <p class="mod-intro">The approval system is the heart of The Hive. It makes sure the right people sign off at the right time — and that nothing ever goes live without proper approval from both sides.</p>
+        <div class="feat">
+          <div class="feat-item"><span class="feat-dot"></span>Two levels: internal (Account Manager approves before client sees) + external (Client Admin approves before publishing)</div>
+          <div class="feat-item"><span class="feat-dot"></span>Client sees a clean preview of each post — exactly how it will look on Instagram, LinkedIn, etc.</div>
+          <div class="feat-item"><span class="feat-dot"></span>Three client actions: Approve, Request Changes (with a comment), or Reject</div>
+          <div class="feat-item"><span class="feat-dot"></span>If changes are requested, the content team is notified and the item goes back to draft</div>
+          <div class="feat-item"><span class="feat-dot"></span>Full history of who approved what and when — useful for accountability and reporting</div>
+          <div class="feat-item"><span class="feat-dot"></span>Bulk approval: client can approve multiple posts in one session</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mod-block">
+      <div class="mod-head"><span class="mod-head-n">M-08 + M-09</span><span class="mod-head-t">Content Calendar & Publishing</span></div>
+      <div class="mod-body">
+        <p class="mod-intro">Once content is approved, it gets placed on a calendar and published automatically at the right time. The calendar is visible to both the Takeout team and the client — though the client only sees approved and published content, never drafts.</p>
+        <div class="feat">
+          <div class="feat-item"><span class="feat-dot"></span>Monthly and weekly calendar view — drag and drop to reschedule</div>
+          <div class="feat-item"><span class="feat-dot"></span>Posts can only be scheduled once they've been approved by the client</div>
+          <div class="feat-item"><span class="feat-dot"></span>Platform icons on each post show where it's going (IG, LinkedIn, etc.)</div>
+          <div class="feat-item"><span class="feat-dot"></span>If a post fails to publish, the system retries automatically and alerts the Account Manager if it keeps failing</div>
+          <div class="feat-item"><span class="feat-dot"></span>Client sees their own version of the calendar — only approved and live content, no internal drafts</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mod-block">
+      <div class="mod-head"><span class="mod-head-n">M-10</span><span class="mod-head-t">Client Portal</span></div>
+      <div class="mod-body">
+        <p class="mod-intro">This is what the client sees when they log in. It should feel clean and easy — not overwhelming. The client comes here to approve content, check their calendar, see how their posts are performing, and communicate with Takeout.</p>
+        <div class="feat">
+          <div class="feat-item"><span class="feat-dot"></span>Home screen shows: content waiting for approval, upcoming scheduled posts, recent performance highlights</div>
+          <div class="feat-item"><span class="feat-dot"></span>Approvals section — all pending content in one place, with preview and one-click approve</div>
+          <div class="feat-item"><span class="feat-dot"></span>Calendar — visual view of what's planned and what's gone live</div>
+          <div class="feat-item"><span class="feat-dot"></span>Analytics overview — key numbers for the past 30 days</div>
+          <div class="feat-item"><span class="feat-dot"></span>Team management — Client Admin can invite staff and set whether they can comment only or view only</div>
+          <div class="feat-item"><span class="feat-dot"></span>If the client has more than one brand, they can switch between them easily</div>
+        </div>
+        <div class="callout"><strong>Design principle:</strong> The client portal should feel like a polished app — not a complicated dashboard. Think "inbox for approvals." The simpler it feels, the faster clients approve, and the smoother everything runs for the Takeout team.</div>
+      </div>
+    </div>
+
+    <div class="mod-block">
+      <div class="mod-head"><span class="mod-head-n">M-11</span><span class="mod-head-t">Analytics Dashboard</span></div>
+      <div class="mod-body">
+        <p class="mod-intro">Analytics show both sides how the content is performing. The Takeout team gets deeper data; the client gets a clean summary that answers the question: "Is this working?"</p>
+        <div class="two-col">
+          <div class="info-box">
+            <div class="info-box-t">What the client sees</div>
+            <ul>
+              <li>Follower growth over time</li>
+              <li>Reach and impressions per post</li>
+              <li>Best performing posts this month</li>
+              <li>Engagement rate (likes, comments, shares)</li>
+              <li>Simple month-on-month comparison</li>
+            </ul>
+          </div>
+          <div class="info-box">
+            <div class="info-box-t">What the Takeout team sees (extra)</div>
+            <ul>
+              <li>All of the above, across all clients</li>
+              <li>Per-platform breakdown</li>
+              <li>Content type performance (carousel vs video)</li>
+              <li>Best posting times data</li>
+              <li>Downloadable PDF/CSV reports</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mod-block">
+      <div class="mod-head"><span class="mod-head-n">M-12</span><span class="mod-head-t">Messaging & Notifications</span></div>
+      <div class="mod-body">
+        <p class="mod-intro">Communication is built into the platform so conversations don't spill into WhatsApp or email. Smart notifications keep everyone in the loop without overwhelming them.</p>
+        <div class="feat">
+          <div class="feat-item"><span class="feat-dot"></span>Direct messaging between the Account Manager and the Client Admin — within the platform</div>
+          <div class="feat-item"><span class="feat-dot"></span>Clients are notified when new content is ready for their review</div>
+          <div class="feat-item"><span class="feat-dot"></span>Account Managers are notified when a client approves, rejects, or comments on content</div>
+          <div class="feat-item"><span class="feat-dot"></span>Gentle nudge notification sent to clients if an approval has been sitting for more than 48 hours</div>
+          <div class="feat-item"><span class="feat-dot"></span>All notifications visible in-app + optional email notifications</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- SECTION 9: EVENTS -->
+  <div class="section" id="events">
+    <div class="sec-hd"><span class="sec-n">09</span><span class="sec-t">When Things Happen — Notification Triggers</span></div>
+    <div class="prose"><p>The platform watches for key moments and sends the right alert to the right person. No one needs to manually chase for updates.</p></div>
+    <div class="ev-table">
+      <div class="ev-row hdr"><div class="ev-trigger">When this happens…</div><div class="ev-action">…this is who gets notified and what they see</div></div>
+      <div class="ev-row"><div class="ev-trigger">New client signs up and picks a plan</div><div class="ev-action">Takeout Account Manager gets a notification: "New client [Name] has signed up on the [Plan] package."</div></div>
+      <div class="ev-row"><div class="ev-trigger">Client completes brand onboarding</div><div class="ev-action">Account Manager notified. Client brief is now available. Platform prompts the team to start working.</div></div>
+      <div class="ev-row"><div class="ev-trigger">Content team uploads a new deliverable</div><div class="ev-action">Account Manager sees it on their dashboard queue. No client notification yet — it hasn't been reviewed internally.</div></div>
+      <div class="ev-row"><div class="ev-trigger">Account Manager sends content to client</div><div class="ev-action">Client Admin receives: "New content is ready for your review." 48-hour clock starts quietly in the background.</div></div>
+      <div class="ev-row"><div class="ev-trigger">Client approves content</div><div class="ev-action">Account Manager notified. Content moves to "Approved" — scheduling is now unlocked.</div></div>
+      <div class="ev-row"><div class="ev-trigger">Client requests changes or rejects content</div><div class="ev-action">Account Manager and content team notified. Client's comment is attached. Content returns to draft.</div></div>
+      <div class="ev-row"><div class="ev-trigger">Approval is sitting for 48+ hours</div><div class="ev-action">Gentle automated reminder sent to Client Admin. Account Manager also flagged in case they want to follow up.</div></div>
+      <div class="ev-row"><div class="ev-trigger">Content publishes successfully</div><div class="ev-action">Both the Account Manager and Client Admin receive a quiet confirmation. Analytics start pulling in.</div></div>
+      <div class="ev-row"><div class="ev-trigger">Content fails to publish</div><div class="ev-action">Account Manager alerted with the reason (e.g. "Instagram connection expired"). System retries 3 times before flagging for manual action.</div></div>
+      <div class="ev-row"><div class="ev-trigger">Social account connection expires</div><div class="ev-action">Both Client Admin and Account Manager notified 7 days in advance. One-click re-connect available. Scheduled posts are held safely, not cancelled.</div></div>
+      <div class="ev-row"><div class="ev-trigger">Client leaves a comment on content</div><div class="ev-action">Account Manager notified immediately. They can respond or relay to the content team.</div></div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- SECTION 10: EDGE CASES -->
+  <div class="section" id="edge">
+    <div class="sec-hd"><span class="sec-n">10</span><span class="sec-t">What If Things Go Wrong?</span></div>
+    <div class="prose"><p>Real-world situations don't always go smoothly. The platform needs to handle these common hiccups gracefully — without panicking and without losing any work.</p></div>
+    <div class="edge-list">
+      <div class="edge-card">
+        <div class="edge-hd"><div class="edge-icon">⏱</div><div class="edge-t">The client goes quiet and doesn't approve content</div></div>
+        <div class="edge-bd">After 48 hours, the system sends the client a gentle reminder notification. At the same time, the Account Manager is flagged so they can choose to follow up via a direct message through the platform. The content stays exactly where it is — nothing is cancelled or lost. The Account Manager can also reschedule the post's target date if the window is at risk of passing.</div>
+      </div>
+      <div class="edge-card">
+        <div class="edge-hd"><div class="edge-icon">✕</div><div class="edge-t">The client keeps requesting changes on the same piece of content</div></div>
+        <div class="edge-bd">Every revision round is logged with the client's comment attached. After three rounds of changes on the same post, the system flags it to the Account Manager so they can have a direct conversation with the client about expectations. The full history of every revision is preserved — nothing is deleted — so the Account Manager can reference the entire back-and-forth.</div>
+      </div>
+      <div class="edge-card">
+        <div class="edge-hd"><div class="edge-icon">🔑</div><div class="edge-t">The client's Instagram or LinkedIn connection expires</div></div>
+        <div class="edge-bd">Any posts scheduled for that account are moved to "Held" — they don't get cancelled and no content is lost. Both the Client Admin and Account Manager are notified with a simple re-connect button. Once the client reconnects their account, the Account Manager can release the held posts back to the schedule with one click.</div>
+      </div>
+      <div class="edge-card">
+        <div class="edge-hd"><div class="edge-icon">⚠</div><div class="edge-t">A post fails to publish at its scheduled time</div></div>
+        <div class="edge-bd">The system tries automatically three times (15 minutes apart). If all three attempts fail, the Account Manager receives an alert with a plain-language reason (e.g. "LinkedIn rejected the file format" or "Instagram rate limit reached"). The post's approval is still valid — it doesn't need to go back through the approval chain. The Account Manager can fix the issue and re-send with one click.</div>
+      </div>
+      <div class="edge-card">
+        <div class="edge-hd"><div class="edge-icon">👤</div><div class="edge-t">The Account Manager handling a client leaves the team</div></div>
+        <div class="edge-bd">An admin can reassign any client account to another team member. The new Account Manager gets a handover summary: which content is pending, any open conversations, any posts scheduled in the near future, and how many approvals are waiting. Nothing falls through the cracks during a transition.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- SECTION 11: MVP -->
+  <div class="section" id="mvp">
+    <div class="sec-hd"><span class="sec-n">11</span><span class="sec-t">What to Build First vs. What Comes Later</span></div>
+    <div class="prose"><p>The goal of the first version is simple: <strong>run one complete client from sign-up to published post</strong>. Everything else can be added once that core flow works well.</p></div>
+    <div class="mvp-cols">
+      <div class="mvp-col p1">
+        <div class="mvp-col-hd">Phase 1 — Build This First</div>
+        <div class="mvp-item"><span class="mvp-d"></span><span>Client sign-up, plan selection, and onboarding flow</span></div>
+        <div class="mvp-item"><span class="mvp-d"></span><span>Brand setup form and brief</span></div>
+        <div class="mvp-item"><span class="mvp-d"></span><span>Instagram + LinkedIn social account connection</span></div>
+        <div class="mvp-item"><span class="mvp-d"></span><span>Content upload, internal review, and internal notes</span></div>
+        <div class="mvp-item"><span class="mvp-d"></span><span>Account Manager → Client approval flow (full 7 stages)</span></div>
+        <div class="mvp-item"><span class="mvp-d"></span><span>Client portal — approvals, calendar, basic profile</span></div>
+        <div class="mvp-item"><span class="mvp-d"></span><span>Takeout team dashboard — client list, task queue</span></div>
+        <div class="mvp-item"><span class="mvp-d"></span><span>Scheduling + auto-publishing</span></div>
+        <div class="mvp-item"><span class="mvp-d"></span><span>Publishing failure alerts and retry logic</span></div>
+        <div class="mvp-item"><span class="mvp-d"></span><span>Basic in-app notifications (approval requests, approvals, rejections)</span></div>
+        <div class="mvp-item"><span class="mvp-d"></span><span>Client team management (invite + assign roles)</span></div>
+      </div>
+      <div class="mvp-col p2">
+        <div class="mvp-col-hd">Phase 2 — Add After Launch</div>
+        <div class="mvp-item"><span class="mvp-d"></span><span>Facebook and X (Twitter) connections</span></div>
+        <div class="mvp-item"><span class="mvp-d"></span><span>Full analytics dashboard for clients</span></div>
+        <div class="mvp-item"><span class="mvp-d"></span><span>Downloadable PDF and CSV reports</span></div>
+        <div class="mvp-item"><span class="mvp-d"></span><span>Built-in messaging between Account Manager and client</span></div>
+        <div class="mvp-item"><span class="mvp-d"></span><span>Email notifications (alongside in-app)</span></div>
+        <div class="mvp-item"><span class="mvp-d"></span><span>Campaign management (grouping content by campaign)</span></div>
+        <div class="mvp-item"><span class="mvp-d"></span><span>Billing and subscription management in client portal</span></div>
+        <div class="mvp-item"><span class="mvp-d"></span><span>Best posting time suggestions per platform</span></div>
+        <div class="mvp-item"><span class="mvp-d"></span><span>Bulk content upload</span></div>
+        <div class="mvp-item"><span class="mvp-d"></span><span>Mobile-responsive client portal</span></div>
+        <div class="mvp-item"><span class="mvp-d"></span><span>White-label options for the client portal</span></div>
+      </div>
+    </div>
+    <div class="callout"><strong>The test for Phase 1 being done:</strong> A brand-new client can sign up, pick a plan, connect Instagram, the Takeout team can upload a post and send it for approval, the client can approve it, and it publishes at the scheduled time. That full loop, working end-to-end, is the MVP.</div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">The <em>Hive</em></div>
+  <div class="footer-sub">Takeout Media — Internal Operating System &amp; Client Portal · PRD v1.1 · April 2026 · Confidential</div>
+</footer>
+
+</body>
+</html>
