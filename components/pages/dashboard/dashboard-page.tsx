@@ -190,7 +190,7 @@ export default function DashboardPage() {
                      <p className="text-sm text-muted-foreground mb-8 leading-relaxed">
                         Your identity guidelines are fully integrated. AI tools are now context-aware.
                      </p>
-                     <Button variant="outline" className="w-full border-brand/20 text-brand font-black hover:bg-brand hover:text-white transition-all rounded-xl" asChild>
+                     <Button variant="secondary" className="w-full border-brand/20 text-brand font-black hover:bg-brand hover:text-white transition-all rounded-xl" asChild>
                         <Link href="/brand-dna">Open Brain Box <ArrowRight size={16} className="ml-2" /></Link>
                      </Button>
                   </div>

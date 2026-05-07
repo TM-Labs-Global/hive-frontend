@@ -33,7 +33,7 @@ export default function BrandDNAPage() {
           </p>
         </div>
         <div className="flex gap-3">
-          <Button variant="outline" className="font-bold border-brand/20 text-brand hover:bg-brand/5">
+          <Button variant="secondary" className="font-bold border-brand/20 text-brand hover:bg-brand/5">
             <Sparkles size={16} className="mr-2" /> Regenerate with AI
           </Button>
           <Button className="bg-brand hover:bg-brand-dark font-black shadow-lg shadow-brand/20">

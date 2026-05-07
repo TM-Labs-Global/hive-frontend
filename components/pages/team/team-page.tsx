@@ -148,7 +148,7 @@ export default function TeamPage() {
                            </div>
                         </td>
                         <td className="p-6">
-                           <Badge variant={member.status === 'Active' ? 'success' : 'secondary'} className="text-[0.625rem]">
+                           <Badge variant={member.status === 'Active' ? 'success' : 'default'} className="text-[0.625rem]">
                               {member.status}
                            </Badge>
                         </td>

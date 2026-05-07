@@ -164,9 +164,9 @@ export default function DashboardPage() {
               <h3 className="font-display text-2xl font-bold mb-4">Flow Logic</h3>
               <p className="text-muted-foreground mb-6">The onboarding flow is a step-based configuration. The UI handles the transitions, but the Logic Engineer must manage the persistence of each step.</p>
               <div className="flex gap-2">
-                <Badge variant="outline">Step 1: Packages</Badge>
-                <Badge variant="outline">Step 2: Brand Info</Badge>
-                <Badge variant="outline">Step 3: Connect Accounts</Badge>
+                <Badge variant="default">Step 1: Packages</Badge>
+                <Badge variant="default">Step 2: Brand Info</Badge>
+                <Badge variant="default">Step 3: Connect Accounts</Badge>
               </div>
             </div>
           </section>

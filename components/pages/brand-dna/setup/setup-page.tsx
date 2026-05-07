@@ -118,7 +118,7 @@ export default function BrandDNASetupPage() {
 
                   <div className="flex justify-center">
                      <Button 
-                        variant="outline" 
+                        variant="secondary" 
                         onClick={() => setView('manual')}
                         className="h-14 px-8 border-2 border-brand/20 text-brand font-bold rounded-2xl hover:bg-brand hover:text-white hover:border-brand transition-all flex items-center gap-2"
                      >

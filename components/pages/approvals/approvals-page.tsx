@@ -153,13 +153,13 @@ export default function ApprovalsPage() {
          </div>
          
          <div className="flex items-center gap-3">
-            <Button variant="outline" className="border-border">
+            <Button variant="secondary" className="border-border">
                <Maximize2 className="mr-2" size={16} /> Fullscreen
             </Button>
-            <Button variant="outline" className="border-destructive text-destructive hover:bg-destructive/5">
+            <Button variant="secondary" className="border-destructive text-destructive hover:bg-destructive/5">
                <X className="mr-2" size={16} /> Reject
             </Button>
-            <Button variant="brand-secondary" className="bg-brand-bg text-brand border-brand/20">
+            <Button variant="secondary" className="bg-brand-bg text-brand border-brand/20">
                <MessageSquare className="mr-2" size={16} /> Request Changes
             </Button>
             <Button className="shadow-brand font-bold px-8">
@@ -195,7 +195,7 @@ export default function ApprovalsPage() {
                      <h4 className="text-[0.625rem] font-black text-muted-foreground uppercase tracking-widest mb-4">Hashtags</h4>
                      <div className="flex flex-wrap gap-2">
                         {["#takeoutmedia", "#thehive", "#creativity", "#brandlaunch"].map(h => (
-                           <Badge key={h} variant="secondary" className="text-brand bg-brand-bg border-brand/10">{h}</Badge>
+                           <Badge key={h} variant="default" className="text-brand bg-brand-bg border-brand/10">{h}</Badge>
                         ))}
                      </div>
                   </CardContent>

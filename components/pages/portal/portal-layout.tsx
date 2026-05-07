@@ -43,7 +43,7 @@ export default function PortalLayout({ children }: { children: React.ReactNode }
                  <div className="font-bold text-sm">Takeout Media</div>
                  <ChevronDown size={14} className="text-muted-foreground" />
               </div>
-              <Badge variant="secondary" className="bg-brand-bg text-brand border-brand/10">Professional Plan</Badge>
+              <Badge variant="default" className="bg-brand-bg text-brand border-brand/10">Professional Plan</Badge>
            </div>
            
            <div className="flex items-center gap-4">

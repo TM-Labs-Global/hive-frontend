@@ -57,7 +57,7 @@ export default function AssetsPage() {
           <p className="text-muted-foreground mt-2 text-lg">Manage all your brand's visual and document resources.</p>
         </div>
         <div className="flex gap-3">
-          <Button variant="outline" className="font-bold h-12 px-6">
+          <Button variant="secondary" className="font-bold h-12 px-6">
              Create Folder
           </Button>
           <Button className="bg-brand hover:bg-brand-dark font-black shadow-lg shadow-brand/20 h-12 px-6">
@@ -184,7 +184,7 @@ export default function AssetsPage() {
             </div>
 
             <div className="flex items-center justify-center pt-10">
-               <Button variant="outline" className="font-bold rounded-full px-8">
+               <Button variant="secondary" className="font-bold rounded-full px-8">
                   Load More Assets
                </Button>
             </div>

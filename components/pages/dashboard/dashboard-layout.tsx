@@ -15,12 +15,13 @@ import {
   FolderOpen, 
   Zap, 
   Box,
-  Team,
+  Users,
   FileText,
   Clock
 } from "lucide-react"
 import { usePathname } from "next/navigation"
 import { Button } from "@/components/ui/button"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname()
@@ -103,43 +104,5 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
         </main>
       </div>
     </div>
-  )
-}
-
-function Avatar({ children, className }: any) {
-  return <div className={cn("h-9 w-9 rounded-full overflow-hidden", className)}>{children}</div>
-}
-
-function AvatarImage({ src }: any) {
-  return <img src={src} className="h-full w-full object-cover" />
-}
-
-function AvatarFallback({ children }: any) {
-  return <div className="h-full w-full bg-muted flex items-center justify-center text-[10px] font-bold uppercase">{children}</div>
-}
-
-function cn(...inputs: any[]) {
-  return inputs.filter(Boolean).join(" ")
-}
-
-function Users(props: any) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
-      <circle cx="9" cy="7" r="4" />
-      <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
-      <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-    </svg>
   )
 }

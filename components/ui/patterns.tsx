@@ -2,7 +2,7 @@ import * as React from "react"
 import { cn } from "@/lib/utils"
 import { Button } from "./button"
 
-interface HeroProps extends React.HTMLAttributes<HTMLDivElement> {
+interface HeroProps extends Omit<React.HTMLAttributes<HTMLDivElement>, "title"> {
   eyebrow?: string
   title: React.ReactNode
   description?: string
@@ -64,6 +64,7 @@ export function Hero({
 
 interface SidebarNavProps extends React.HTMLAttributes<HTMLElement> {
   logo?: React.ReactNode
+  footer?: React.ReactNode
   sections: {
     label?: string
     items: {
@@ -76,7 +77,7 @@ interface SidebarNavProps extends React.HTMLAttributes<HTMLElement> {
   }[]
 }
 
-export function SidebarNav({ logo, sections, className, ...props }: SidebarNavProps) {
+export function SidebarNav({ logo, sections, footer, className, ...props }: SidebarNavProps) {
   return (
     <aside
       className={cn(
@@ -130,6 +131,11 @@ export function SidebarNav({ logo, sections, className, ...props }: SidebarNavPr
           </div>
         ))}
       </div>
+      {footer && (
+        <div className="mt-auto pt-6 border-t border-white/5">
+           {footer}
+        </div>
+      )}
     </aside>
   )
 }

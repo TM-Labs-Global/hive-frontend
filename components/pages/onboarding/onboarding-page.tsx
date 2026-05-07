@@ -74,7 +74,7 @@ function SocialCard({
           </div>
         </div>
         <Button 
-          variant={connected ? "outline" : "secondary"} 
+          variant="secondary" 
           size="sm"
           onClick={onConnect}
           className={cn("h-9 rounded-xl font-bold", connected && "border-brand text-brand hover:bg-brand/5")}
@@ -232,7 +232,7 @@ export default function OnboardingPage() {
 
                            <div className="flex justify-center">
                               <Button 
-                                 variant="outline" 
+                                 variant="secondary" 
                                  onClick={() => setSetupView('manual')}
                                  className="h-14 px-8 border-2 border-brand/20 text-brand font-black rounded-2xl hover:bg-brand hover:text-white hover:border-brand transition-all flex items-center gap-2"
                               >

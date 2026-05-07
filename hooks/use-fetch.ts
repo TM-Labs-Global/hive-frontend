@@ -57,7 +57,7 @@ export const requestApi = async <T = unknown>({
             const session = await getSession();
 
             if (session?.user) {
-                headers['Authorization'] = `Bearer ${session.user.token}`;
+                headers['Authorization'] = `Bearer ${(session.user as any).token}`;
             } else if (auth === 'required') {
                 if (!isServer) {
                     const nextPath = `${window.location.pathname}${window.location.search}`;

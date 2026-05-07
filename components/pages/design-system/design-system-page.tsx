@@ -187,13 +187,13 @@ export default function DesignSystemPage() {
                       <Badge variant="dark">Takeout Media</Badge>
                       <Badge variant="success">Active</Badge>
                       <Badge variant="warning">Pending</Badge>
-                      <Badge variant="destructive">Disconnected</Badge>
+                      <Badge variant="danger">Disconnected</Badge>
                    </div>
                 </div>
                 <div className="space-y-4">
                    <h4 className="text-xs font-bold text-muted-foreground uppercase tracking-wider">Content Stages</h4>
                    <div className="flex flex-wrap gap-3">
-                      <Badge variant="outline">Draft</Badge>
+                      <Badge variant="draft">Draft</Badge>
                       <Badge variant="warning">Review</Badge>
                       <Badge variant="brand">Awaiting Approval</Badge>
                       <Badge variant="success">Approved</Badge>

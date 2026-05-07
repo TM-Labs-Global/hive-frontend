@@ -111,7 +111,7 @@ export default function CalendarPage({ isAdmin = false }: { isAdmin?: boolean })
                <Search size={16} className="text-muted-foreground" />
                <input placeholder="Filter posts..." className="bg-transparent border-none text-xs font-medium outline-none w-32" />
             </div>
-            <Button variant="outline" className="border-border">
+            <Button variant="secondary" className="border-border">
                <Filter className="mr-2" size={16} /> Filters
             </Button>
             {isAdmin && (

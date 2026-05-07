@@ -94,10 +94,10 @@ export default function AnalyticsPage() {
             </h1>
          </div>
          <div className="flex items-center gap-3">
-            <Button variant="outline" className="border-border">
+            <Button variant="secondary" className="border-border">
                <Calendar className="mr-2" size={16} /> Last 7 Days
             </Button>
-            <Button variant="outline" className="border-border">
+            <Button variant="secondary" className="border-border">
                <Download className="mr-2" size={16} /> Export CSV
             </Button>
          </div>
