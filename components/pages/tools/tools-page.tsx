@@ -84,6 +84,11 @@ export default function ToolsPage() {
               image="/tools/ai-social.png"
               tilt="right"
             />
+            <DesignToolCard 
+              label="AI Pitch Deck"
+              image="/tools/ai-pitch.png"
+              tilt="left"
+            />
           </div>
         </section>
       </div>

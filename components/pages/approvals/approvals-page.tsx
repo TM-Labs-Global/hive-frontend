@@ -266,20 +266,20 @@ export default function ApprovalsPage() {
                
                <div className="flex-1 overflow-y-auto p-6 space-y-6">
                   <Comment 
-                     author="Alex Karev" 
+                     author="Michealla Ezima" 
                      role="Account Manager" 
                      time="2h ago" 
                      content="Internal review complete. Captions look great. @Client, please review for brand alignment."
                      type="system"
                   />
                   <Comment 
-                     author="Sarah Jenkins" 
+                     author="Chiamaka" 
                      role="Designer" 
                      time="4h ago" 
                      content="Updated the color grade on the second slide as requested. Ready for review."
                   />
                   <Comment 
-                     author="Alex Karev" 
+                     author="Michealla Ezima" 
                      role="Account Manager" 
                      time="5h ago" 
                      content="The orange feels a bit muted in the shadows. Can we boost the saturation slightly?"

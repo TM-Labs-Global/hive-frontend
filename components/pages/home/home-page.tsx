@@ -2,53 +2,179 @@
 
 import * as React from "react"
 import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
 import Link from "next/link"
+import { motion } from "framer-motion"
+import { Upload, ChevronRight, ArrowRight, ShieldCheck, Zap, Globe } from "lucide-react"
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-surface-dark flex flex-col items-center justify-center p-8 text-center">
-      <div className="mb-12">
-         <h1 className="font-display text-8xl font-extrabold tracking-tighter text-white mb-6">
-           The <span className="text-brand">Hive</span>
-         </h1>
-         <p className="text-xl text-white/60 max-w-2xl mx-auto leading-relaxed font-sans">
-           The custom-built operating system for Takeout Media. 
-           Manage brand relationships, content pipelines, and publishing workflows in one premium interface.
-         </p>
-      </div>
+    <div className="min-h-screen bg-[#0D0D0D] text-white selection:bg-brand/30">
+      {/* Header */}
+      <header className="fixed top-0 left-0 right-0 z-50 border-b border-white/5 bg-black/20 backdrop-blur-xl">
+        <div className="container mx-auto px-6 h-20 flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <div className="w-8 h-8 bg-brand rounded-lg flex items-center justify-center">
+               <div className="w-4 h-4 bg-white rounded-sm rotate-45" />
+            </div>
+            <span className="font-display text-2xl font-bold tracking-tighter">
+              The <span className="text-brand">Hive</span>
+            </span>
+          </div>
+          
+          <div className="hidden md:flex items-center gap-8 text-sm font-medium text-white/60">
+            <Link href="#features" className="hover:text-white transition-colors">Features</Link>
+            <Link href="#clients" className="hover:text-white transition-colors">Clients</Link>
+            <Link href="/docs" className="hover:text-white transition-colors">Docs</Link>
+          </div>
 
-      <div className="flex flex-wrap gap-4 justify-center">
-        <Button size="lg" asChild>
-          <Link href="/register">Get Started</Link>
-        </Button>
-        <Button variant="secondary" size="lg" className="border-white/10 text-white hover:bg-white/5" asChild>
-          <Link href="/login">Login</Link>
-        </Button>
-      </div>
+          <div className="flex items-center gap-4">
+            <Button variant="ghost" className="text-white/60 hover:text-white" asChild>
+              <Link href="/login">Sign In</Link>
+            </Button>
+            <Button className="bg-brand hover:bg-brand-hover text-white rounded-full px-6" asChild>
+              <Link href="/register">Get Started</Link>
+            </Button>
+          </div>
+        </div>
+      </header>
 
-      <div className="flex flex-wrap gap-4 justify-center mt-6">
-        <Button variant="ghost-dark" size="sm" asChild>
-          <Link href="/design-system">Design System</Link>
-        </Button>
-        <Button variant="ghost-dark" size="sm" asChild>
-          <Link href="/docs">Documentation</Link>
-        </Button>
-      </div>
+      <main>
+        {/* Hero Section */}
+        <section className="relative pt-40 pb-24 overflow-hidden">
+          {/* Background Glow */}
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-6xl h-[600px] bg-brand/10 blur-[120px] rounded-full -z-10" />
+          
+          <div className="container mx-auto px-6 text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-medium text-brand mb-8">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-brand"></span>
+                </span>
+                Now in Private Beta
+              </span>
+              
+              <h1 className="font-display text-6xl md:text-8xl font-extrabold tracking-tight mb-8 leading-[1.1]">
+                Import Your <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand via-[#FF7A50] to-[#FF9E80]">
+                  Brand DNA
+                </span>
+              </h1>
+              
+              <p className="text-xl text-white/50 max-w-2xl mx-auto mb-12 leading-relaxed font-sans">
+                The ultimate operating system for Takeout Media. 
+                Upload your brand identity once, and let the Hive automate your creative workflows, 
+                approvals, and content pipelines.
+              </p>
 
-      <div className="mt-24 grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-5xl">
-        <FeatureItem title="Tokens First" desc="A robust theme built on Tailwind v4 and OKLCH color spaces." />
-        <FeatureItem title="Role-Based" desc="Custom interfaces for Account Managers, Content Teams, and Clients." />
-        <FeatureItem title="Integrated" desc="Seamlessly connects with Takeout Media's existing publishing tools." />
-      </div>
-    </div>
-  )
-}
+              {/* Import Action */}
+              <div className="max-w-xl mx-auto relative group">
+                <div className="absolute -inset-1 bg-gradient-to-r from-brand/50 to-orange-500/50 rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
+                <div className="relative flex p-1.5 bg-white/5 border border-white/10 rounded-2xl backdrop-blur-sm shadow-2xl">
+                  <div className="flex-1 flex items-center px-4">
+                    <Upload className="w-5 h-5 text-white/30 mr-3" />
+                    <Input 
+                      type="text" 
+                      placeholder="Paste your brand URL or name..." 
+                      className="bg-transparent border-none outline-none text-white placeholder:text-white/20 w-full text-sm ring-0 focus:ring-0 focus-visible:ring-0 shadow-none"
+                    />
+                  </div>
+                  <Button className="bg-brand hover:bg-brand-hover text-white px-8 rounded-xl h-12 gap-2 shadow-lg shadow-brand/20">
+                    Import <ArrowRight className="w-4 h-4" />
+                  </Button>
+                </div>
+              </div>
 
-function FeatureItem({ title, desc }: { title: string, desc: string }) {
-  return (
-    <div className="p-8 rounded-2xl border border-white/10 bg-white/5 text-left">
-      <h3 className="font-display text-xl font-bold text-white mb-3">{title}</h3>
-      <p className="text-sm text-white/50 leading-relaxed">{desc}</p>
+              <div className="mt-8 flex items-center justify-center gap-6 text-sm text-white/40">
+                <div className="flex items-center gap-2">
+                  <ShieldCheck className="w-4 h-4 text-brand" />
+                  Enterprise Security
+                </div>
+                <div className="flex items-center gap-2">
+                  <Zap className="w-4 h-4 text-brand" />
+                  AI Powered Insights
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Trusted By Section (Logos) */}
+        <section id="clients" className="py-24 border-y border-white/5 bg-white/[0.02]">
+          <div className="container mx-auto px-6 mb-12 text-center">
+            <h2 className="text-sm font-medium uppercase tracking-[0.2em] text-white/30">
+              Trusted by leading brands and agencies
+            </h2>
+          </div>
+          
+          <div className="relative flex overflow-hidden">
+            <div className="flex animate-marquee whitespace-nowrap py-4">
+               {[...Array(6)].map((_, i) => (
+                 <div key={i} className="flex shrink-0 items-center gap-20 px-10">
+                   <img src="/images/client-logos.png" alt="Client Logos" className="h-10 w-auto opacity-40 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-500 cursor-pointer invert" />
+                 </div>
+               ))}
+            </div>
+            
+            {/* Gradient Mask for Fade Effect */}
+            <div className="absolute inset-y-0 left-0 w-40 bg-gradient-to-r from-[#0D0D0D] to-transparent z-10" />
+            <div className="absolute inset-y-0 right-0 w-40 bg-gradient-to-l from-[#0D0D0D] to-transparent z-10" />
+          </div>
+        </section>
+
+        {/* Floating Visual Element (Optional Wow Factor) */}
+        <section id="features" className="py-32 container mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+             <div className="p-8 rounded-3xl bg-white/5 border border-white/10 hover:border-brand/30 transition-all group">
+                <div className="w-12 h-12 rounded-2xl bg-brand/10 flex items-center justify-center mb-6 group-hover:bg-brand/20 transition-colors">
+                  <Zap className="w-6 h-6 text-brand" />
+                </div>
+                <h3 className="text-xl font-bold mb-3 font-display">Instant Onboarding</h3>
+                <p className="text-white/50 text-sm leading-relaxed">
+                  Connect your existing brand assets and the Hive automatically configures your workspace.
+                </p>
+             </div>
+             <div className="p-8 rounded-3xl bg-white/5 border border-white/10 hover:border-brand/30 transition-all group">
+                <div className="w-12 h-12 rounded-2xl bg-brand/10 flex items-center justify-center mb-6 group-hover:bg-brand/20 transition-colors">
+                  <ShieldCheck className="w-6 h-6 text-brand" />
+                </div>
+                <h3 className="text-xl font-bold mb-3 font-display">Brand Guardian</h3>
+                <p className="text-white/50 text-sm leading-relaxed">
+                  Maintain consistency across all channels with automated approval workflows.
+                </p>
+             </div>
+             <div className="p-8 rounded-3xl bg-white/5 border border-white/10 hover:border-brand/30 transition-all group">
+                <div className="w-12 h-12 rounded-2xl bg-brand/10 flex items-center justify-center mb-6 group-hover:bg-brand/20 transition-colors">
+                  <Globe className="w-6 h-6 text-brand" />
+                </div>
+                <h3 className="text-xl font-bold mb-3 font-display">Multi-Tenant</h3>
+                <p className="text-white/50 text-sm leading-relaxed">
+                  Manage multiple brands under one account with isolated data and custom permissions.
+                </p>
+             </div>
+          </div>
+        </section>
+      </main>
+
+      <footer className="py-12 border-t border-white/5 text-center text-white/20 text-xs">
+        <p>© 2026 Takeout Media. All rights reserved. Built for creators by the Hive team.</p>
+      </footer>
+
+      {/* Marquee Keyframes */}
+      <style jsx global>{`
+        @keyframes marquee {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+          animation: marquee 40s linear infinite;
+        }
+      `}</style>
     </div>
   )
 }

@@ -20,7 +20,8 @@ import {
   FolderOpen,
   ArrowUpRight,
   TrendingUp,
-  Brain
+  Brain,
+  Presentation
 } from "lucide-react"
 import Link from "next/link"
 import { cn } from "@/lib/utils"
@@ -62,7 +63,7 @@ export default function DashboardPage() {
       </div>
 
       {/* Quick Actions Grid - Glassmorphic Style */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-16 items-stretch">
          <ActionCard 
             title="Social Media Post" 
             desc="AI-generated posts tuned to your voice."
@@ -86,6 +87,13 @@ export default function DashboardPage() {
             badge={3}
          />
          <ActionCard 
+            title="Create Pitch Deck" 
+            desc="AI-generated presentations in your voice."
+            icon={<Presentation size={22} />}
+            href="/tools?tab=pitch"
+            variant="purple"
+         />
+         <ActionCard 
             title="Upload to Assets" 
             desc="Sync logos, fonts, and brand assets."
             icon={<Plus size={22} />}
@@ -107,21 +115,25 @@ export default function DashboardPage() {
                </div>
                
                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  <ApprovalCard 
-                     title="Brand Launch Phase 1" 
-                     platforms={["instagram", "linkedin"]}
-                     deadline="2d left"
-                     author="Alex K."
-                     image="/images/brand-launch-phase-1.jpg"
-                  />
-                  <ApprovalCard 
-                     title="Weekly Strategy Brief" 
-                     platforms={["facebook"]}
-                     deadline="4d left"
-                     author="Sarah J."
-                     image="/images/weekly-trategy-rief.jpg"
-                  />
-               </div>
+                  <Link href="/approvals" className="block">
+                     <ApprovalCard 
+                        title="Brand Launch Phase 1" 
+                        platforms={["instagram", "linkedin"]}
+                        deadline="2d left"
+                        author="Michealla Ezima"
+                        image="/images/brand-launch-phase-1.jpg"
+                     />
+                  </Link>
+                  <Link href="/approvals" className="block">
+                     <ApprovalCard 
+                        title="Weekly Strategy Brief" 
+                        platforms={["facebook"]}
+                        deadline="4d left"
+                        author="Chiamaka"
+                        image="/images/weekly-trategy-rief.jpg"
+                     />
+                  </Link>
+                </div>
             </section>
 
             {/* Smart Recommendation Section */}
@@ -146,7 +158,7 @@ export default function DashboardPage() {
                <h3 className="font-display text-2xl font-black mb-8 tracking-tight">Brand Activity</h3>
                <div className="space-y-4">
                   <ActivityTile 
-                     user="Takeout Team"
+                     user="Michealla Ezima"
                      action="synced 4 new documents to"
                      target="Internal Docs"
                      time="2h ago"
@@ -227,27 +239,31 @@ function ActionCard({ title, desc, icon, href, variant, badge }: any) {
       brand: "bg-brand/10 text-brand",
       blue: "bg-blue-500/10 text-blue-600",
       orange: "bg-orange-500/10 text-orange-600",
-      black: "bg-black/5 text-black"
+      black: "bg-black/5 text-black",
+      purple: "bg-purple-500/10 text-purple-600"
    }
 
    return (
-      <Link href={href}>
-         <Card className="group hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 cursor-pointer border-none shadow-xl shadow-black/5 bg-white rounded-[2rem] p-6 relative overflow-hidden">
-            <div className={cn("absolute top-0 right-0 p-6 opacity-0 group-hover:opacity-10 transition-opacity", variants[variant])}>
-               {icon}
-            </div>
-            <div className="flex items-center justify-between mb-6">
-               <div className={cn("h-12 w-12 rounded-2xl flex items-center justify-center transition-transform group-hover:rotate-12", variants[variant])}>
-                  {icon}
+      <Link href={href} className="h-full flex">
+         <Card className="group flex-1 hover:shadow-2xl hover:shadow-black/10 transition-all duration-300 cursor-pointer border border-transparent hover:border-brand/10 bg-white rounded-3xl p-7 flex flex-col relative overflow-hidden min-h-[220px]">
+            <div className="flex items-center justify-between mb-8">
+               <div className={cn("h-14 w-14 rounded-2xl flex items-center justify-center transition-all group-hover:scale-110", variants[variant])}>
+                  {React.cloneElement(icon as React.ReactElement<any>, { size: 24 })}
                </div>
                {badge && (
-                  <div className="h-6 w-6 bg-brand text-white rounded-lg flex items-center justify-center text-[10px] font-black shadow-lg shadow-brand/40 animate-bounce">
+                  <div className="h-7 w-7 bg-brand text-white rounded-xl flex items-center justify-center text-[11px] font-black shadow-lg shadow-brand/40">
                      {badge}
                   </div>
                )}
             </div>
-            <h4 className="font-black text-sm mb-1 group-hover:text-brand transition-colors">{title}</h4>
-            <p className="text-[11px] text-muted-foreground leading-relaxed font-medium">{desc}</p>
+            
+            <div className="mt-auto">
+               <h4 className="font-black text-base mb-1.5 group-hover:text-brand transition-colors tracking-tight">{title}</h4>
+               <p className="text-[12px] text-muted-foreground leading-relaxed font-medium opacity-80">{desc}</p>
+            </div>
+
+            {/* Subtle Background Pattern */}
+            <div className={cn("absolute -bottom-6 -right-6 h-24 w-24 opacity-0 group-hover:opacity-10 transition-all duration-500 blur-2xl rounded-full", variants[variant])} />
          </Card>
       </Link>
    )
@@ -255,7 +271,7 @@ function ActionCard({ title, desc, icon, href, variant, badge }: any) {
 
 function ApprovalCard({ title, platforms, deadline, author, image }: any) {
    return (
-      <div className="group cursor-pointer">
+      <div className="group cursor-pointer flex flex-col h-full">
          <div className="relative aspect-[16/10] rounded-[2rem] overflow-hidden shadow-2xl shadow-black/10 mb-5">
             <img src={image} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -281,12 +297,12 @@ function ApprovalCard({ title, platforms, deadline, author, image }: any) {
                </div>
             </div>
          </div>
-         <div className="flex items-center justify-between px-2">
-            <div>
-               <h4 className="font-black text-base group-hover:text-brand transition-colors">{title}</h4>
+         <div className="flex items-start justify-between px-2 flex-1">
+            <div className="flex-1 pr-4">
+               <h4 className="font-black text-base group-hover:text-brand transition-colors line-clamp-1">{title}</h4>
                <span className="text-[10px] font-black text-muted-foreground uppercase tracking-widest block mt-0.5">Requested by {author}</span>
             </div>
-            <div className="flex items-center gap-1.5 px-3 py-1 bg-orange-500/10 text-orange-600 rounded-full text-[10px] font-black uppercase tracking-widest">
+            <div className="flex items-center gap-1.5 px-3 py-1 bg-orange-500/10 text-orange-600 rounded-full text-[10px] font-black uppercase tracking-widest whitespace-nowrap">
                <Clock size={12} /> {deadline}
             </div>
          </div>
