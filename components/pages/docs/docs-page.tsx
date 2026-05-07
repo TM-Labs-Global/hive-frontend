@@ -59,7 +59,7 @@ export default function DocsPage() {
         {/* Main Content */}
         <main className="flex-1 max-w-4xl p-12 overflow-y-auto">
           <header className="mb-16">
-            <h1 className="font-display text-6xl font-extrabold tracking-tighter mb-6">
+            <h1 className="font-display text-4xl font-extrabold tracking-tight mb-6">
               Engineering <span className="text-brand">Handover</span>
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">

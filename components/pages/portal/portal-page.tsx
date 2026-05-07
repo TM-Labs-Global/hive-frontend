@@ -15,8 +15,8 @@ export default function PortalPage() {
     <PortalLayout>
       <div className="mb-12">
          <Badge variant="brand" className="mb-4">Brand Dashboard</Badge>
-         <h1 className="font-display text-5xl font-black tracking-tight text-foreground">
-            Welcome back, <span className="text-brand">Takeout Media</span>
+         <h1 className="font-display text-4xl font-black tracking-tight text-foreground">
+            Welcome back, <span className="text-brand">Jaiz Bank</span>
          </h1>
          <p className="text-muted-foreground mt-2 text-lg">Here's what's happening with your brand this week.</p>
       </div>

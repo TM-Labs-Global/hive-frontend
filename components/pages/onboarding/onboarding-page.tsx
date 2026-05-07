@@ -100,10 +100,10 @@ export default function OnboardingPage() {
   const router = useRouter()
   const [step, setStep] = useState(1) 
   const [setupView, setSetupView] = useState<'import' | 'manual' | 'manual-details' | 'summary'>('import')
-  const [url, setUrl] = useState('')
-  const [brandName, setBrandName] = useState('')
-  const [brandDesc, setBrandDesc] = useState('')
-  const [logo, setLogo] = useState<string | null>(null)
+  const [url, setUrl] = useState('https://jaizbankplc.com/')
+  const [brandName, setBrandName] = useState('Jaiz Bank')
+  const [brandDesc, setBrandDesc] = useState('The first non-interest bank in Nigeria, providing ethical and transparent financial services.')
+  const [logo, setLogo] = useState<string | null>('/images/default-brand/Jaiz Favicon.png')
   
   const [connections, setConnections] = useState({
     instagram: false,
@@ -347,20 +347,20 @@ export default function OnboardingPage() {
                            <div className="mb-10 text-left">
                               <h2 className="text-3xl font-black tracking-tight mb-2">Your Brand DNA</h2>
                               <p className="text-muted-foreground text-sm flex items-center gap-2">
-                                 👇 Please feel free to edit and make changes
+                                 Please feel free to edit and make changes
                               </p>
                            </div>
                            
                            <BrandDNASummary 
                               logo={logo}
-                              name={brandName || "Acelo Logistics"} 
-                              desc={brandDesc || "Acelo Logistics: Your top choice for nationwide transportation logistics and bus rentals."}
-                              url={url || "https://acelologistics.com"}
+                              name={brandName || "Jaiz Bank"} 
+                              desc={brandDesc || "Jaiz Bank: The first non-interest bank in Nigeria, providing financial services under Islamic banking principles."}
+                              url={url || "jaizbank.com"}
                            />
 
                            <div className="mt-12 flex flex-col items-center gap-6">
                               <p className="text-muted-foreground text-sm flex items-center gap-2">
-                                 👆 Checkout your brand DNA and click Save to continue
+                                 Checkout your brand DNA and click Save to continue
                               </p>
                               <Button 
                                  size="lg" 
@@ -388,7 +388,7 @@ export default function OnboardingPage() {
                         ← Back to Brand Setup
                       </Button>
                       <Badge className="bg-brand/10 text-brand border-none mb-4">M-03</Badge>
-                      <h1 className="font-display text-5xl font-black tracking-tight mb-4 text-foreground">
+                      <h1 className="font-display text-4xl font-black tracking-tight mb-4 text-foreground">
                         Securely <span className="text-brand">Connect</span>
                       </h1>
                       <p className="text-lg text-muted-foreground max-w-xl">
@@ -501,13 +501,13 @@ function BrandDNASummary({ logo, name, desc, url }: any) {
          {/* Hero Card */}
          <Card className="border-none bg-white p-10 rounded-[2rem] shadow-sm">
           <CardContent className="p-0 flex flex-col md:flex-row gap-12 items-center">
-            <div className="h-44 w-44 rounded-[1.5rem] bg-brand flex items-center justify-center p-8 shadow-sm">
+            <div className="h-44 w-44 rounded-[1.5rem] bg-[#003B5C] flex items-center justify-center p-8 shadow-sm">
                {logo ? (
                   <img src={logo} className="w-full h-full object-contain" />
                ) : (
                   <div className="flex flex-col items-center text-white">
-                     <span className="font-display text-2xl font-black tracking-tighter leading-none mb-1">Acelo</span>
-                     <span className="font-display text-2xl font-black tracking-tighter leading-none">Logistics</span>
+                     <span className="font-display text-2xl font-black tracking-tighter leading-none mb-1">Jaiz</span>
+                     <span className="font-display text-2xl font-black tracking-tighter leading-none">Bank</span>
                   </div>
                )}
             </div>
@@ -552,8 +552,8 @@ function BrandDNASummary({ logo, name, desc, url }: any) {
                       <span className="text-[9px] font-mono font-bold">#FFFFFF</span>
                    </div>
                    <div className="flex flex-col items-center gap-2">
-                      <div className="h-10 w-10 rounded-full bg-[#F2FC2A]" />
-                      <span className="text-[9px] font-mono font-bold">#F2FC2A</span>
+                      <div className="h-10 w-10 rounded-full bg-[#008751]" />
+                      <span className="text-[9px] font-mono font-bold">#008751</span>
                    </div>
                 </div>
              </DNAGridCard>
@@ -561,21 +561,21 @@ function BrandDNASummary({ logo, name, desc, url }: any) {
           <div className="lg:col-span-2 lg:row-span-2">
              <DNAGridCard title="About Us">
                 <p className="text-muted-foreground leading-relaxed text-sm">
-                   Acelo Logistics is dedicated to providing exceptional transportation logistics and bus rental services across the nation. Our commitment to reliability, efficiency, and customer satisfaction makes us a leader in the logistics industry. We aim to connect destinations seamlessly, ensuring smooth journeys for every need.
+                   Jaiz Bank Plc is a bank in Nigeria operating under Islamic banking principles and is a non-interest bank. It is the first non-interest bank established in Nigeria and is headquartered in Abuja, the capital city of the country.
                 </p>
              </DNAGridCard>
           </div>
           <div className="lg:col-span-1">
              <DNAGridCard title="Mission">
                 <p className="text-muted-foreground leading-relaxed text-sm">
-                   To deliver top-tier logistics services with unmatched reliability and clarity.
+                   To provide innovative, ethical and value-driven financial services to our customers.
                 </p>
              </DNAGridCard>
           </div>
           <div className="lg:col-span-1">
              <DNAGridCard title="Vision">
                 <p className="text-muted-foreground leading-relaxed text-sm">
-                   To redefine transportation logistics through innovation and excellence.
+                   To be the leading ethical financial institution in Sub-Saharan Africa.
                 </p>
              </DNAGridCard>
           </div>

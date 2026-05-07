@@ -66,11 +66,11 @@ function SocialPreview({ platform, content }: any) {
         <div className="bg-white p-4 flex items-center justify-between border-b border-border">
           <div className="flex items-center gap-3">
             <Avatar className="h-8 w-8">
-              <AvatarImage src="https://images.unsplash.com/photo-1614850523296-d8c1af93d400?w=32&h=32&fit=crop" />
-              <AvatarFallback>TM</AvatarFallback>
+              <AvatarImage src="/images/social-media-approval-icon.jpg" />
+              <AvatarFallback>JB</AvatarFallback>
             </Avatar>
             <div>
-              <div className="text-xs font-bold leading-none">Takeout Media</div>
+              <div className="text-xs font-bold leading-none">Jaiz Bank</div>
               <div className="text-[0.625rem] text-muted-foreground">Sponsored</div>
             </div>
           </div>
@@ -86,7 +86,7 @@ function SocialPreview({ platform, content }: any) {
         
         <div className="aspect-square bg-muted relative">
            <img 
-            src="https://images.unsplash.com/photo-1626785774573-4b799315345d?w=800&h=800&fit=crop" 
+            src="/images/approval-images.png" 
             alt="Post content"
             className="w-full h-full object-cover"
            />
@@ -109,10 +109,10 @@ function SocialPreview({ platform, content }: any) {
              )}
           </div>
           <div className="text-[0.8rem] leading-snug">
-             <span className="font-bold mr-2">takeoutmedia</span>
+             <span className="font-bold mr-2">jaizbankplc</span>
              {content.caption}
           </div>
-          <div className="text-[0.7rem] text-brand font-medium">#takeoutmedia #thehive #creativity</div>
+          <div className="text-[0.7rem] text-brand font-medium">#jaizbank #ethicalbanking #noninterest</div>
         </div>
       </Card>
     </div>
@@ -126,8 +126,8 @@ export default function ApprovalsPage() {
   const [showRevisions, setShowRevisions] = React.useState(false)
 
   const postContent = {
-    title: "Brand Launch Campaign - Phase 1",
-    caption: "Excited to finally share the new brand identity for The Hive! This has been months in the making. We wanted something that felt both premium and engineering-focused. 🚀",
+    title: "Ethical Banking Campaign",
+    caption: "Jaiz Bank Plc’s Executive Management Team, led by the Managing Director, Haruna Musa, PhD, paid a working visit to the National Sugar Development Council, where they were received by the Executive Secretary, Kamar Bakrin, as part of ongoing efforts to create more value for our stakeholders.",
     scheduledFor: "May 12, 2026 - 10:00 AM",
     revisionCount: 2
   }
@@ -142,7 +142,7 @@ export default function ApprovalsPage() {
             <div>
                <div className="flex items-center gap-3 mb-1">
                   <Badge variant="brand" className="text-[0.625rem]">M-07 / Stage 4</Badge>
-                  <h1 className="font-display text-2xl font-black tracking-tight">{postContent.title}</h1>
+                  <h1 className="font-display text-4xl font-black tracking-tight">{postContent.title}</h1>
                </div>
                <div className="flex items-center gap-4 text-xs text-muted-foreground">
                   <span className="flex items-center gap-1"><Calendar size={12} /> May 12, 2026</span>
@@ -194,9 +194,62 @@ export default function ApprovalsPage() {
                   <CardContent className="p-6">
                      <h4 className="text-[0.625rem] font-black text-muted-foreground uppercase tracking-widest mb-4">Hashtags</h4>
                      <div className="flex flex-wrap gap-2">
-                        {["#takeoutmedia", "#thehive", "#creativity", "#brandlaunch"].map(h => (
+                        {["#jaizbank", "#ethicalbanking", "#noninterest", "#financialfreedom"].map(h => (
                            <Badge key={h} variant="default" className="text-brand bg-brand-bg border-brand/10">{h}</Badge>
                         ))}
+                     </div>
+                  </CardContent>
+               </Card>
+            </div>
+            
+            {/* New: Brand Intelligence Section */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+               <Card className="md:col-span-1 bg-white border-border shadow-sm overflow-hidden group">
+                  <div className="p-1 bg-brand" />
+                  <CardContent className="p-6">
+                     <div className="flex items-center justify-between mb-4">
+                        <h4 className="text-[0.625rem] font-black text-muted-foreground uppercase tracking-widest">Brand Sync</h4>
+                        <div className="flex items-center gap-1 text-[10px] font-bold text-green-600 bg-green-50 px-2 py-0.5 rounded-full">
+                           <Check size={10} /> 98% Match
+                        </div>
+                     </div>
+                     <div className="space-y-4">
+                        <div className="flex items-center justify-between">
+                           <div className="flex items-center gap-2">
+                              <div className="h-4 w-4 rounded-full bg-[#008751]" />
+                              <span className="text-[10px] font-bold">#008751</span>
+                           </div>
+                           <Badge variant="success" className="text-[9px] h-5 px-1.5 border-green-200 text-green-600 bg-green-50">Primary</Badge>
+                        </div>
+                        <div className="flex items-center justify-between">
+                           <div className="flex items-center gap-2">
+                              <div className="h-4 w-4 rounded-full bg-white border border-border" />
+                              <span className="text-[10px] font-bold">#FFFFFF</span>
+                           </div>
+                           <Badge variant="success" className="text-[9px] h-5 px-1.5 border-green-200 text-green-600 bg-green-50">Secondary</Badge>
+                        </div>
+                        <div className="pt-2 border-t border-border mt-2">
+                           <div className="flex items-center justify-between text-[10px]">
+                              <span className="text-muted-foreground">Logo Variant</span>
+                              <span className="font-bold">Full Color</span>
+                           </div>
+                        </div>
+                     </div>
+                  </CardContent>
+               </Card>
+
+               <Card className="md:col-span-2 bg-white border-border shadow-sm overflow-hidden">
+                  <CardContent className="p-6">
+                     <h4 className="text-[0.625rem] font-black text-muted-foreground uppercase tracking-widest mb-4">Post Strategy</h4>
+                     <div className="grid grid-cols-2 gap-8">
+                        <div>
+                           <span className="text-[9px] font-bold text-muted-foreground uppercase block mb-1">Objective</span>
+                           <p className="text-xs font-medium leading-relaxed">Increase ethical banking awareness and drive traffic to the Sharia-compliant investment portal.</p>
+                        </div>
+                        <div>
+                           <span className="text-[9px] font-bold text-muted-foreground uppercase block mb-1">Target Audience</span>
+                           <p className="text-xs font-medium leading-relaxed">Young professionals (25-40) interested in ethical and sustainable finance.</p>
+                        </div>
                      </div>
                   </CardContent>
                </Card>
@@ -250,22 +303,29 @@ export default function ApprovalsPage() {
 }
 
 function Comment({ author, role, time, content, type = "message" }: any) {
+  const initials = author.split(' ').map((n: any) => n[0]).join('')
+  
   return (
-    <div className="space-y-2">
-       <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2">
-             <div className="font-bold text-xs">{author}</div>
-             <div className="text-[0.625rem] text-muted-foreground uppercase font-bold tracking-tighter">{role}</div>
+    <div className="flex gap-4 group">
+       <Avatar className="h-8 w-8 border border-border shrink-0">
+          <AvatarFallback className="text-[10px] font-black bg-muted/50">{initials}</AvatarFallback>
+       </Avatar>
+       <div className="space-y-2 flex-1">
+          <div className="flex items-center justify-between">
+             <div className="flex items-center gap-2">
+                <div className="font-bold text-xs group-hover:text-brand transition-colors">{author}</div>
+                <div className="text-[0.625rem] text-muted-foreground uppercase font-black tracking-tighter">{role}</div>
+             </div>
+             <div className="text-[0.625rem] text-muted-foreground">{time}</div>
           </div>
-          <div className="text-[0.625rem] text-muted-foreground">{time}</div>
-       </div>
-       <div className={cn(
-          "p-4 rounded-xl text-xs leading-relaxed",
-          type === "system" ? "bg-brand/5 border border-brand/10 text-foreground" : 
-          type === "revision" ? "bg-destructive/5 border border-destructive/10 text-destructive-foreground" : 
-          "bg-muted/50 border border-border text-foreground"
-       )}>
-          {content}
+          <div className={cn(
+             "p-4 rounded-2xl text-xs leading-relaxed shadow-sm",
+             type === "system" ? "bg-brand/5 border border-brand/10 text-foreground" : 
+             type === "revision" ? "bg-destructive/5 border border-destructive/10 text-destructive-foreground" : 
+             "bg-white border border-border text-foreground"
+          )}>
+             {content}
+          </div>
        </div>
     </div>
   )

@@ -41,9 +41,9 @@ export default function DashboardPage() {
                   Live Sync
                </div>
             </div>
-            <h1 className="font-display text-5xl md:text-6xl font-black tracking-tighter text-foreground leading-[1.1]">
+            <h1 className="font-display text-4xl font-black tracking-tight text-foreground leading-[1.1]">
                Welcome back, <br />
-               <span className="text-brand">Takeout Media</span>
+               <span className="text-brand">Jaiz Bank</span>
             </h1>
             <p className="text-muted-foreground mt-4 text-lg max-w-xl font-medium">
                Your brand identity is synced across 4 platforms. Here's your weekly intelligence report.
@@ -112,14 +112,14 @@ export default function DashboardPage() {
                      platforms={["instagram", "linkedin"]}
                      deadline="2d left"
                      author="Alex K."
-                     image="https://images.unsplash.com/photo-1626785774573-4b799315345d?w=800&q=80"
+                     image="/images/brand-launch-phase-1.jpg"
                   />
                   <ApprovalCard 
                      title="Weekly Strategy Brief" 
                      platforms={["facebook"]}
                      deadline="4d left"
                      author="Sarah J."
-                     image="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80"
+                     image="/images/weekly-trategy-rief.jpg"
                   />
                </div>
             </section>
@@ -133,7 +133,7 @@ export default function DashboardPage() {
                   <Badge className="bg-brand text-white border-none mb-6">AI Suggestion</Badge>
                   <h3 className="font-display text-3xl font-black mb-4 tracking-tight">Boost your Engagement</h3>
                   <p className="text-white/60 mb-8 max-w-lg text-lg leading-relaxed">
-                     Based on your recent <span className="text-white font-bold">Acelo Logistics</span> DNA updates, we recommend generating a set of LinkedIn banner mockups to keep your profile fresh.
+                     Based on your recent <span className="text-white font-bold">Jaiz Bank</span> DNA updates, we recommend generating a set of LinkedIn banner mockups to keep your profile fresh.
                   </p>
                   <Button className="bg-brand hover:bg-brand-dark h-12 px-8 font-black rounded-xl">
                      Generate Now <Sparkles className="ml-2" size={18} />

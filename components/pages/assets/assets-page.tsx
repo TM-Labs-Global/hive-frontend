@@ -51,7 +51,7 @@ export default function AssetsPage() {
       <div className="flex flex-col md:flex-row md:items-center justify-between mb-10 gap-6">
         <div>
           <Badge variant="brand" className="mb-4">Media Library</Badge>
-          <h1 className="font-display text-5xl font-black tracking-tight text-foreground">
+          <h1 className="font-display text-4xl font-black tracking-tight text-foreground">
             Brand <span className="text-brand">Assets</span>
           </h1>
           <p className="text-muted-foreground mt-2 text-lg">Manage all your brand's visual and document resources.</p>

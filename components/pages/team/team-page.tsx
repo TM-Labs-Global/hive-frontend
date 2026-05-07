@@ -30,9 +30,9 @@ import {
 // --- Mock Data ---
 
 const TEAM_MEMBERS = [
-  { name: "Sarah Jenkins", email: "sarah@takeout.media", role: "Client Admin", status: "Active", avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=64&h=64&fit=crop" },
-  { name: "Mark Wilson", email: "mark@takeout.media", role: "Team Member", status: "Active", avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=64&h=64&fit=crop" },
-  { name: "Jessica Lee", email: "jess@takeout.media", role: "Team Member", status: "Pending", avatar: "" },
+  { name: "Sarah Jenkins", email: "sarah@jaizbank.com", role: "Client Admin", status: "Active", avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=64&h=64&fit=crop" },
+  { name: "Mark Wilson", email: "mark@jaizbank.com", role: "Team Member", status: "Active", avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=64&h=64&fit=crop" },
+  { name: "Jessica Lee", email: "jess@jaizbank.com", role: "Team Member", status: "Pending", avatar: "" },
 ]
 
 export default function TeamPage() {
@@ -53,10 +53,10 @@ export default function TeamPage() {
       <div className="mb-10 flex items-end justify-between">
          <div>
             <Badge variant="brand" className="mb-4">Brand Team</Badge>
-            <h1 className="font-display text-5xl font-black tracking-tight text-foreground">
+            <h1 className="font-display text-4xl font-black tracking-tight text-foreground">
                Team <span className="text-brand">Management</span>
             </h1>
-            <p className="text-muted-foreground mt-2">Manage who has access to the Takeout Media brand portal.</p>
+            <p className="text-muted-foreground mt-2">Manage who has access to the Jaiz Bank brand portal.</p>
          </div>
 
          <Dialog>

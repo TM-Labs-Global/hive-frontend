@@ -55,7 +55,7 @@ const PLATFORM_DATA = [
 ]
 
 const TOP_POSTS = [
-  { title: "Brand Launch Reel", platform: "Instagram", reach: "12.4k", engagement: "8%", date: "May 12" },
+  { title: "Ethical Banking Reel", platform: "Instagram", reach: "12.4k", engagement: "8%", date: "May 12" },
   { title: "Strategy Brief", platform: "LinkedIn", reach: "8.2k", engagement: "5.4%", date: "May 10" },
   { title: "Product Showcase", platform: "Instagram", reach: "6.1k", engagement: "12%", date: "May 08" },
 ]
@@ -89,7 +89,7 @@ export default function AnalyticsPage() {
       <div className="mb-10 flex items-end justify-between">
          <div>
             <Badge variant="brand" className="mb-4">M-11 / Growth Pulse</Badge>
-            <h1 className="font-display text-5xl font-black tracking-tight text-foreground">
+            <h1 className="font-display text-4xl font-black tracking-tight text-foreground">
                Brand <span className="text-brand">Analytics</span>
             </h1>
          </div>

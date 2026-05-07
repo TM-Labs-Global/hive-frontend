@@ -29,7 +29,7 @@ export default function BrandDNAPage() {
             Your Brand DNA
           </h1>
           <p className="text-muted-foreground mt-1 flex items-center gap-2">
-            <span className="text-brand">👇</span> Please feel free to edit and make changes
+            Please feel free to edit and make changes
           </p>
         </div>
         <div className="flex gap-3">
@@ -46,8 +46,8 @@ export default function BrandDNAPage() {
         {/* Hero Card */}
         <Card className="border-none bg-[#F9F9F9] p-10 rounded-[2.5rem]">
           <CardContent className="p-0 flex flex-col md:flex-row gap-12 items-center">
-            <div className="group relative h-48 w-48 rounded-[2rem] bg-white flex items-center justify-center p-8 shadow-sm cursor-pointer overflow-hidden">
-               <img src="https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=200&h=200&fit=crop" className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" />
+            <div className="group relative h-48 w-48 rounded-[2rem] bg-[#003B5C] flex items-center justify-center p-8 shadow-sm cursor-pointer overflow-hidden">
+               <img src="/images/default-brand/Jaiz Favicon.png" className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" />
                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white gap-2">
                   <Camera size={24} />
                   <span className="text-[10px] font-black uppercase tracking-widest">Change</span>
@@ -55,13 +55,13 @@ export default function BrandDNAPage() {
             </div>
             <div className="flex-1">
                <div className="flex items-center justify-between mb-4">
-                  <EditableHeading value="Takeout Media" />
+                  <EditableHeading value="Jaiz Bank" />
                   <span className="text-muted-foreground text-sm flex items-center gap-2 cursor-pointer hover:text-brand transition-colors">
-                     takeoutmedia.com <Globe size={14} />
+                     jaizbank.com <Globe size={14} />
                   </span>
                </div>
                <EditableParagraph 
-                  value="Takeout Media is your creative powerhouse for modern storytelling, delivering high-impact brand identities, digital experiences, and strategic communication."
+                  value="Jaiz Bank: The first non-interest bank in Nigeria, providing financial services under Islamic banking principles."
                   className="text-xl leading-relaxed max-w-3xl"
                />
             </div>
@@ -129,7 +129,7 @@ export default function BrandDNAPage() {
                    >
                       <div className="h-16 w-16 rounded-full bg-brand shadow-lg ring-offset-2 ring-transparent group-hover:ring-brand/20 transition-all ring-4" />
                       <div>
-                         <div className="font-mono font-bold text-lg group-hover:text-brand transition-colors">#FF4D00</div>
+                         <div className="font-mono font-bold text-lg group-hover:text-brand transition-colors">#008751</div>
                          <div className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest">Primary Color</div>
                       </div>
                    </div>
@@ -162,7 +162,7 @@ export default function BrandDNAPage() {
           <div className="lg:col-span-2 lg:row-span-2">
              <DNAGridCard title="About Us">
                 <EditableParagraph 
-                   value="Takeout Media is designed to simplify your brand experience by bringing everything you need into one creative hub. Whether you need to define your visual identity, find your strategic voice, or explore new digital landscapes, Takeout Media provides seamless integration across all your brand needs. With secure creative solutions and intuitive tools, Takeout Media ensures that your journey is as smooth and impactful as possible."
+                   value="Jaiz Bank Plc is a bank in Nigeria operating under Islamic banking principles and is a non-interest bank. It is the first non-interest bank established in Nigeria and is headquartered in Abuja, the capital city of the country. Jaiz Bank provides a wide range of financial services to individuals and businesses, focusing on ethical and transparent banking solutions."
                    className="text-muted-foreground leading-relaxed text-lg"
                    editMode
                 />
@@ -171,7 +171,7 @@ export default function BrandDNAPage() {
           <div className="lg:col-span-1">
              <DNAGridCard title="Mission">
                 <EditableParagraph 
-                   value="To revolutionize storytelling by providing a seamless and integrated platform for all brand communication needs."
+                   value="To provide innovative, ethical and value-driven financial services to our customers through a committed and professional workforce."
                    className="text-muted-foreground leading-relaxed"
                    editMode
                 />
@@ -182,7 +182,7 @@ export default function BrandDNAPage() {
           <div className="lg:col-span-1">
              <DNAGridCard title="Vision">
                 <EditableParagraph 
-                   value="To be the leading creative agency that redefines the way people connect and experience brands globally."
+                   value="To be the leading ethical financial institution in Sub-Saharan Africa, providing world-class services while staying true to our values."
                    className="text-muted-foreground leading-relaxed"
                    editMode
                 />
@@ -193,7 +193,7 @@ export default function BrandDNAPage() {
           <div className="lg:col-span-1">
              <DNAGridCard title="Values">
                 <div className="flex flex-col gap-2">
-                   {["Innovation", "Consistency", "Creative Excellence"].map(val => (
+                   {["Ethical Banking", "Innovation", "Customer-Centric", "Transparency"].map(val => (
                       <div key={val} className="bg-white border border-border py-2 px-4 rounded-xl font-bold text-foreground w-fit hover:border-brand cursor-pointer transition-colors">
                          {val}
                       </div>

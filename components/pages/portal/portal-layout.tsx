@@ -40,7 +40,7 @@ export default function PortalLayout({ children }: { children: React.ReactNode }
               {/* Brand Switcher Placeholder */}
               <div className="flex items-center gap-3 py-1 px-3 rounded-lg hover:bg-muted cursor-pointer transition-colors border border-transparent hover:border-border">
                  <div className="h-8 w-8 rounded-md bg-brand/10 flex items-center justify-center text-brand font-black text-xs">TM</div>
-                 <div className="font-bold text-sm">Takeout Media</div>
+                 <div className="font-bold text-sm">Jaiz Bank</div>
                  <ChevronDown size={14} className="text-muted-foreground" />
               </div>
               <Badge variant="default" className="bg-brand-bg text-brand border-brand/10">Professional Plan</Badge>

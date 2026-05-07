@@ -115,7 +115,7 @@ export default function DesignSystemPage() {
                 </div>
                 <div>
                   <span className="text-[0.625rem] text-tertiary mb-2 block uppercase font-mono tracking-wider font-semibold">H1 · Bricolage · 700 · 48px</span>
-                  <h1 className="font-display text-[3rem] font-bold tracking-tight">Client & Brand OS</h1>
+                  <h1 className="font-display text-4xl font-bold tracking-tight">Client & Brand OS</h1>
                 </div>
                 <div>
                   <span className="text-[0.625rem] text-tertiary mb-2 block uppercase font-mono tracking-wider font-semibold">H2 · Bricolage · 700 · 36px</span>

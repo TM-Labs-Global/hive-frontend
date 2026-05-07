@@ -14,7 +14,7 @@ export default function ToolsPage() {
       <div className="flex flex-col md:flex-row md:items-center justify-between mb-16 gap-6">
         <div>
           <Badge variant="brand" className="mb-4">Creative Suite</Badge>
-          <h1 className="font-display text-5xl font-black tracking-tight text-foreground">
+          <h1 className="font-display text-4xl font-black tracking-tight text-foreground">
             Brand <span className="text-brand">Tools</span>
           </h1>
           <p className="text-muted-foreground mt-2 text-lg max-w-2xl">
