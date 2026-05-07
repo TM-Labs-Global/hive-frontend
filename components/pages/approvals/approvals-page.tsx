@@ -21,10 +21,27 @@ import {
   Maximize2,
   ChevronLeft,
   ChevronRight,
-  Send
+  Send,
+  Music2
 } from "lucide-react"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { cn } from "@/lib/utils"
+
+// Custom TikTok Icon
+const TiktokIcon = ({ size = 18 }: { size?: number }) => (
+  <svg 
+    width={size} 
+    height={size} 
+    viewBox="0 0 24 24" 
+    fill="none" 
+    stroke="currentColor" 
+    strokeWidth="2" 
+    strokeLinecap="round" 
+    strokeLinejoin="round"
+  >
+    <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
+  </svg>
+)
 
 // --- Sub-components ---
 
@@ -37,7 +54,7 @@ function PlatformToggle({ active, icon: Icon, onClick }: any) {
         active ? "bg-brand/10 border-brand text-brand" : "bg-white border-border text-muted-foreground hover:bg-muted"
       )}
     >
-      <Icon size={18} />
+      {typeof Icon === 'function' && Icon.name === 'TiktokIcon' ? <Icon size={18} /> : <Icon size={18} />}
     </button>
   )
 }
@@ -57,12 +74,14 @@ function SocialPreview({ platform, content }: any) {
               <div className="text-[0.625rem] text-muted-foreground">Sponsored</div>
             </div>
           </div>
-          <Tabs defaultValue={platform} className="w-fit">
-            <TabsList className="h-7 bg-muted/50">
-              <TabsTrigger value="instagram" className="text-[0.625rem] h-6 px-2"><Instagram size={10} /></TabsTrigger>
-              <TabsTrigger value="linkedin" className="text-[0.625rem] h-6 px-2"><Linkedin size={10} /></TabsTrigger>
-            </TabsList>
-          </Tabs>
+          <div className="flex items-center gap-2">
+            <div className={cn("p-1.5 rounded-md", platform === 'instagram' ? "bg-pink-600/10 text-pink-600" : "bg-muted text-muted-foreground")}>
+               <Instagram size={12} />
+            </div>
+            <div className={cn("p-1.5 rounded-md", platform === 'tiktok' ? "bg-black text-white" : "bg-muted text-muted-foreground")}>
+               <TiktokIcon size={12} />
+            </div>
+          </div>
         </div>
         
         <div className="aspect-square bg-muted relative">
@@ -74,10 +93,20 @@ function SocialPreview({ platform, content }: any) {
         </div>
 
         <div className="p-4 bg-white space-y-3">
-          <div className="flex items-center gap-3 text-muted-foreground">
-             <Instagram size={18} />
-             <MessageSquare size={18} />
-             <Send size={18} />
+          <div className="flex items-center gap-4 text-muted-foreground">
+             {platform === 'tiktok' ? (
+                <>
+                   <Music2 size={18} />
+                   <MessageSquare size={18} />
+                   <Send size={18} />
+                </>
+             ) : (
+                <>
+                   <Instagram size={18} />
+                   <MessageSquare size={18} />
+                   <Send size={18} />
+                </>
+             )}
           </div>
           <div className="text-[0.8rem] leading-snug">
              <span className="font-bold mr-2">takeoutmedia</span>
@@ -144,6 +173,7 @@ export default function ApprovalsPage() {
          <div className="lg:col-span-8 space-y-6">
             <div className="flex items-center justify-center gap-2 mb-2">
                <PlatformToggle active={activePlatform === "instagram"} icon={Instagram} onClick={() => setActivePlatform("instagram")} />
+               <PlatformToggle active={activePlatform === "tiktok"} icon={TiktokIcon} onClick={() => setActivePlatform("tiktok")} />
                <PlatformToggle active={activePlatform === "facebook"} icon={Facebook} onClick={() => setActivePlatform("facebook")} />
                <PlatformToggle active={activePlatform === "linkedin"} icon={Linkedin} onClick={() => setActivePlatform("linkedin")} />
                <PlatformToggle active={activePlatform === "twitter"} icon={Twitter} onClick={() => setActivePlatform("twitter")} />
@@ -178,7 +208,7 @@ export default function ApprovalsPage() {
             <section className="bg-white rounded-2xl border border-border overflow-hidden flex flex-col h-[700px]">
                <div className="p-6 border-b border-border bg-muted/20 flex items-center justify-between">
                   <h3 className="font-display text-lg font-bold">Review History</h3>
-                  <Badge variant="success" className="text-[0.625rem]">Internal Approved</Badge>
+                  <Badge variant="success" className="text-[0.625rem]">INTERNAL APPROVED</Badge>
                </div>
                
                <div className="flex-1 overflow-y-auto p-6 space-y-6">

@@ -2,115 +2,199 @@
 
 import * as React from "react"
 import DashboardLayout from "./dashboard-layout"
-import { StatCard } from "@/components/ui/stat-card"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { AlertItem } from "@/components/ui/alert-item"
-import { Check, ArrowRight, Instagram, Facebook, Linkedin, Clock, Sparkles, MessageCircle } from "lucide-react"
+import { 
+  Check, 
+  ArrowRight, 
+  Instagram, 
+  Facebook, 
+  Linkedin, 
+  Clock, 
+  Sparkles, 
+  Zap, 
+  Layout, 
+  CheckSquare, 
+  Plus, 
+  FolderOpen,
+  ArrowUpRight,
+  TrendingUp,
+  Brain
+} from "lucide-react"
 import Link from "next/link"
+import { cn } from "@/lib/utils"
 
 export default function DashboardPage() {
   return (
     <DashboardLayout>
-      <div className="mb-12">
-         <Badge variant="brand" className="mb-4">Brand Dashboard</Badge>
-         <h1 className="font-display text-5xl font-black tracking-tight text-foreground">
-            Welcome back, <span className="text-brand">Takeout Media</span>
-         </h1>
-         <p className="text-muted-foreground mt-2 text-lg">Here's what's happening with your brand this week.</p>
+      {/* Mesh Gradient Background Decor */}
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand/5 blur-[120px] rounded-full pointer-events-none -z-10" />
+      <div className="absolute top-40 left-20 w-[300px] h-[300px] bg-blue-500/5 blur-[100px] rounded-full pointer-events-none -z-10" />
+
+      <div className="mb-12 flex flex-col lg:flex-row lg:items-center justify-between gap-8">
+         <div>
+            <div className="flex items-center gap-2 mb-4">
+               <Badge className="bg-brand/10 text-brand border-none px-3 py-1 rounded-full font-black text-[10px] uppercase tracking-widest">Brand Dashboard</Badge>
+               <div className="flex items-center gap-1.5 px-3 py-1 bg-green-500/10 text-green-600 rounded-full font-bold text-[10px] uppercase tracking-widest">
+                  <div className="h-1.5 w-1.5 rounded-full bg-green-500 animate-pulse" />
+                  Live Sync
+               </div>
+            </div>
+            <h1 className="font-display text-5xl md:text-6xl font-black tracking-tighter text-foreground leading-[1.1]">
+               Welcome back, <br />
+               <span className="text-brand">Takeout Media</span>
+            </h1>
+            <p className="text-muted-foreground mt-4 text-lg max-w-xl font-medium">
+               Your brand identity is synced across 4 platforms. Here's your weekly intelligence report.
+            </p>
+         </div>
+
+         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <HeaderStat label="Storage Usage" value="65%" progress={65} />
+            <HeaderStat 
+               label="Hive Credits" 
+               value="24" 
+               sub="Free generations left" 
+               icon={<Sparkles size={14} className="text-brand" />} 
+            />
+         </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
-         {/* Actionable Column: Approvals */}
-         <div className="lg:col-span-2 space-y-8">
+      {/* Quick Actions Grid - Glassmorphic Style */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+         <ActionCard 
+            title="Social Media Post" 
+            desc="AI-generated posts tuned to your voice."
+            icon={<Zap size={22} />}
+            href="/tools?tab=social"
+            variant="brand"
+         />
+         <ActionCard 
+            title="Create Mockup" 
+            desc="Reality-grade mockups in one click."
+            icon={<Layout size={22} />}
+            href="/tools?tab=mockups"
+            variant="blue"
+         />
+         <ActionCard 
+            title="Approvals Waiting" 
+            desc="Review 3 new items from your team."
+            icon={<CheckSquare size={22} />}
+            href="/approvals"
+            variant="orange"
+            badge={3}
+         />
+         <ActionCard 
+            title="Upload to Assets" 
+            desc="Sync logos, fonts, and brand assets."
+            icon={<Plus size={22} />}
+            href="/assets"
+            variant="black"
+         />
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+         {/* Main Column */}
+         <div className="lg:col-span-2 space-y-16">
+            {/* Pending Approvals with Refined Cards */}
             <section>
-               <div className="flex items-center justify-between mb-6">
-                  <h3 className="font-display text-2xl font-bold flex items-center gap-2">
-                     Waiting for Approval <span className="h-6 w-6 bg-brand text-white rounded-full flex items-center justify-center text-[0.625rem] font-black">3</span>
-                  </h3>
-                  <Button variant="ghost" className="text-brand font-bold" asChild>
-                     <Link href="/approvals">View All Approvals <ArrowRight className="ml-2" size={16} /></Link>
+               <div className="flex items-center justify-between mb-8">
+                  <h3 className="font-display text-3xl font-black tracking-tight">Pending Approvals</h3>
+                  <Button variant="ghost" className="text-brand font-black text-xs uppercase tracking-widest hover:bg-brand/5" asChild>
+                     <Link href="/approvals">View All <ArrowRight className="ml-2" size={16} /></Link>
                   </Button>
                </div>
                
-               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <ApprovalPreviewCard 
+               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <ApprovalCard 
                      title="Brand Launch Phase 1" 
                      platforms={["instagram", "linkedin"]}
-                     daysLeft={2}
-                     image="https://images.unsplash.com/photo-1626785774573-4b799315345d?w=400&h=400&fit=crop"
+                     deadline="2d left"
+                     author="Alex K."
+                     image="https://images.unsplash.com/photo-1626785774573-4b799315345d?w=800&q=80"
                   />
-                  <ApprovalPreviewCard 
+                  <ApprovalCard 
                      title="Weekly Strategy Brief" 
                      platforms={["facebook"]}
-                     daysLeft={4}
-                     image="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=400&fit=crop"
+                     deadline="4d left"
+                     author="Sarah J."
+                     image="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80"
                   />
                </div>
             </section>
 
-            <section>
-               <div className="flex items-center justify-between mb-6">
-                  <h3 className="font-display text-2xl font-bold">Upcoming Scheduled</h3>
-                  <Button variant="ghost" className="text-muted-foreground font-bold" asChild>
-                     <Link href="/calendar">Full Calendar <ArrowRight className="ml-2" size={16} /></Link>
+            {/* Smart Recommendation Section */}
+            <section className="bg-surface-dark rounded-[2.5rem] p-10 text-white overflow-hidden relative shadow-2xl shadow-black/10">
+               <div className="absolute top-0 right-0 p-10 opacity-10 pointer-events-none">
+                  <Brain size={160} />
+               </div>
+               <div className="relative z-10">
+                  <Badge className="bg-brand text-white border-none mb-6">AI Suggestion</Badge>
+                  <h3 className="font-display text-3xl font-black mb-4 tracking-tight">Boost your Engagement</h3>
+                  <p className="text-white/60 mb-8 max-w-lg text-lg leading-relaxed">
+                     Based on your recent <span className="text-white font-bold">Acelo Logistics</span> DNA updates, we recommend generating a set of LinkedIn banner mockups to keep your profile fresh.
+                  </p>
+                  <Button className="bg-brand hover:bg-brand-dark h-12 px-8 font-black rounded-xl">
+                     Generate Now <Sparkles className="ml-2" size={18} />
                   </Button>
                </div>
+            </section>
+
+            {/* Activity List */}
+            <section>
+               <h3 className="font-display text-2xl font-black mb-8 tracking-tight">Brand Activity</h3>
                <div className="space-y-4">
-                  <ScheduledItem 
-                     title="Product Showcase Reel" 
-                     platform="Instagram" 
-                     date="Tomorrow, 10:00 AM" 
-                     type="Video"
+                  <ActivityTile 
+                     user="Takeout Team"
+                     action="synced 4 new documents to"
+                     target="Internal Docs"
+                     time="2h ago"
+                     icon={<FolderOpen size={16} />}
                   />
-                  <ScheduledItem 
-                     title="Client Testimonial Series" 
-                     platform="LinkedIn" 
-                     date="Wed, May 14" 
-                     type="Carousel"
+                  <ActivityTile 
+                     user="System"
+                     action="auto-optimized DNA for"
+                     target="Tone of Voice"
+                     time="5h ago"
+                     icon={<Sparkles size={16} />}
+                     isSystem
                   />
                </div>
             </section>
          </div>
 
-         {/* Insight Column: Analytics & Team */}
-         <div className="space-y-10">
+         {/* Sidebar */}
+         <div className="space-y-12">
+            {/* Intelligence / Pulse */}
             <section>
-               <h3 className="font-display text-2xl font-bold mb-6">Brand Pulse</h3>
-               <div className="grid grid-cols-1 gap-4">
-                  <StatCard value="+12.4%" label="Weekly Reach" />
-                  <StatCard value="4.8k" label="Engagements" />
-                  <StatCard value="128" label="New Followers" />
+               <h3 className="font-display text-2xl font-black mb-8 tracking-tight">Intelligence</h3>
+               <div className="space-y-4">
+                  <PulseCard label="Weekly Reach" value="+12.4%" trend="up" data={[30, 45, 35, 50, 40, 60]} />
+                  <PulseCard label="Engagements" value="4.8k" trend="up" data={[20, 25, 22, 30, 28, 35]} />
+                  <PulseCard label="Brand Sentiment" value="98%" trend="neutral" data={[95, 96, 98, 97, 98, 98]} />
                </div>
             </section>
 
+            {/* DNA Status Card */}
             <section>
-               <Card className="bg-brand text-white border-none shadow-brand overflow-hidden relative">
-                  <div className="absolute top-0 right-0 p-4 opacity-10">
-                     <Sparkles size={80} />
-                  </div>
-                  <CardContent className="pt-8">
-                     <h4 className="font-display text-lg font-bold mb-2">Team Strategy</h4>
-                     <p className="text-xs text-white/80 mb-6 leading-relaxed">
-                        Your dedicated Account Manager, **Alex Karev**, is working on next month's strategy document.
+               <Card className="bg-white border-2 border-brand/10 p-8 rounded-[2.5rem] shadow-xl shadow-brand/5 relative overflow-hidden group hover:border-brand/30 transition-all">
+                  <div className="absolute -top-4 -right-4 h-24 w-24 bg-brand/5 rounded-full blur-2xl group-hover:bg-brand/10 transition-colors" />
+                  <div className="relative z-10">
+                     <div className="h-12 w-12 rounded-2xl bg-brand/10 text-brand flex items-center justify-center mb-6">
+                        <Badge className="bg-brand text-white border-none p-0 h-6 w-6 rounded-lg flex items-center justify-center">
+                           <Check size={14} />
+                        </Badge>
+                     </div>
+                     <h4 className="font-display text-xl font-black mb-2">Brand DNA Verified</h4>
+                     <p className="text-sm text-muted-foreground mb-8 leading-relaxed">
+                        Your identity guidelines are fully integrated. AI tools are now context-aware.
                      </p>
-                     <Button variant="ghost-dark" className="w-full justify-between bg-white/10 hover:bg-white/20 border-none">
-                        View Team <ArrowRight size={16} />
+                     <Button variant="outline" className="w-full border-brand/20 text-brand font-black hover:bg-brand hover:text-white transition-all rounded-xl" asChild>
+                        <Link href="/brand-dna">Open Brain Box <ArrowRight size={16} className="ml-2" /></Link>
                      </Button>
-                  </CardContent>
+                  </div>
                </Card>
-            </section>
-
-            <section>
-               <h3 className="font-display text-lg font-bold mb-4">Recent Notes</h3>
-               <div className="space-y-3">
-                  <AlertItem 
-                     title="Caption Update" 
-                     description="Alex updated the caption for #442." 
-                     icon={<MessageCircle size={14} />}
-                  />
-               </div>
             </section>
          </div>
       </div>
@@ -118,50 +202,152 @@ export default function DashboardPage() {
   )
 }
 
-function ApprovalPreviewCard({ title, platforms, daysLeft, image }: any) {
-  return (
-    <Card className="group cursor-pointer border-border hover:border-brand/40 transition-all shadow-sm overflow-hidden">
-      <div className="aspect-video bg-muted relative overflow-hidden">
-         <img src={image} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-         <div className="absolute top-3 left-3 flex gap-1">
-            {platforms.includes("instagram") && <div className="h-6 w-6 rounded-md bg-white/90 backdrop-blur flex items-center justify-center shadow-sm"><Instagram size={12} className="text-pink-600" /></div>}
-            {platforms.includes("linkedin") && <div className="h-6 w-6 rounded-md bg-white/90 backdrop-blur flex items-center justify-center shadow-sm"><Linkedin size={12} className="text-blue-600" /></div>}
-            {platforms.includes("facebook") && <div className="h-6 w-6 rounded-md bg-white/90 backdrop-blur flex items-center justify-center shadow-sm"><Facebook size={12} className="text-blue-800" /></div>}
-         </div>
-      </div>
-      <CardContent className="p-4">
-         <div className="flex items-center justify-between mb-1">
-            <h4 className="font-bold text-sm truncate pr-4">{title}</h4>
-            <div className="flex items-center gap-1 text-[0.625rem] text-orange font-black uppercase tracking-tighter">
-               <Clock size={10} /> {daysLeft}d left
+function HeaderStat({ label, value, progress, sub, icon }: any) {
+   return (
+      <div className="bg-white/80 backdrop-blur-md border border-white/50 shadow-xl shadow-black/5 rounded-3xl p-5 min-w-[200px]">
+         <span className="text-[9px] font-black uppercase tracking-widest text-muted-foreground mb-2 block">{label}</span>
+         <div className="flex items-center justify-between mb-2">
+            <div className="flex items-center gap-2">
+               {icon}
+               <span className="text-2xl font-black tracking-tighter text-foreground">{value}</span>
             </div>
+            {sub && <span className="text-[10px] font-bold text-muted-foreground">{sub}</span>}
          </div>
-         <Button variant="ghost" size="sm" className="w-full mt-2 h-8 text-[0.625rem] font-black uppercase tracking-widest border border-border group-hover:bg-brand group-hover:text-white group-hover:border-brand transition-colors">
-            Review Content
-         </Button>
-      </CardContent>
-    </Card>
-  )
+         {progress !== undefined && (
+            <div className="h-1.5 w-full bg-muted rounded-full overflow-hidden">
+               <div className="h-full bg-brand transition-all duration-1000 ease-out" style={{ width: `${progress}%` }} />
+            </div>
+         )}
+      </div>
+   )
 }
 
-function ScheduledItem({ title, platform, date, type }: any) {
+function ActionCard({ title, desc, icon, href, variant, badge }: any) {
+   const variants: any = {
+      brand: "bg-brand/10 text-brand",
+      blue: "bg-blue-500/10 text-blue-600",
+      orange: "bg-orange-500/10 text-orange-600",
+      black: "bg-black/5 text-black"
+   }
+
    return (
-      <div className="flex items-center justify-between p-4 rounded-xl border border-border bg-white hover:bg-muted/30 transition-colors">
-         <div className="flex items-center gap-4">
-            <div className="h-10 w-10 rounded-lg bg-muted flex items-center justify-center text-muted-foreground">
-               {platform === 'Instagram' ? <Instagram size={20} /> : platform === 'LinkedIn' ? <Linkedin size={20} /> : <Facebook size={20} />}
+      <Link href={href}>
+         <Card className="group hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 cursor-pointer border-none shadow-xl shadow-black/5 bg-white rounded-[2rem] p-6 relative overflow-hidden">
+            <div className={cn("absolute top-0 right-0 p-6 opacity-0 group-hover:opacity-10 transition-opacity", variants[variant])}>
+               {icon}
             </div>
-            <div>
-               <div className="font-bold text-sm">{title}</div>
-               <div className="text-[0.625rem] text-muted-foreground uppercase tracking-widest font-bold">
-                  {platform} • {type}
+            <div className="flex items-center justify-between mb-6">
+               <div className={cn("h-12 w-12 rounded-2xl flex items-center justify-center transition-transform group-hover:rotate-12", variants[variant])}>
+                  {icon}
+               </div>
+               {badge && (
+                  <div className="h-6 w-6 bg-brand text-white rounded-lg flex items-center justify-center text-[10px] font-black shadow-lg shadow-brand/40 animate-bounce">
+                     {badge}
+                  </div>
+               )}
+            </div>
+            <h4 className="font-black text-sm mb-1 group-hover:text-brand transition-colors">{title}</h4>
+            <p className="text-[11px] text-muted-foreground leading-relaxed font-medium">{desc}</p>
+         </Card>
+      </Link>
+   )
+}
+
+function ApprovalCard({ title, platforms, deadline, author, image }: any) {
+   return (
+      <div className="group cursor-pointer">
+         <div className="relative aspect-[16/10] rounded-[2rem] overflow-hidden shadow-2xl shadow-black/10 mb-5">
+            <img src={image} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            
+            <div className="absolute top-4 left-4 flex gap-2">
+               {platforms.map((p: any) => (
+                  <div key={p} className="h-8 w-8 rounded-xl bg-white/90 backdrop-blur-md flex items-center justify-center shadow-lg border border-white/50">
+                     {p === 'instagram' && <Instagram size={14} className="text-pink-600" />}
+                     {p === 'linkedin' && <Linkedin size={14} className="text-blue-600" />}
+                     {p === 'facebook' && <Facebook size={14} className="text-blue-800" />}
+                  </div>
+               ))}
+            </div>
+
+            <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+               <Button className="bg-white text-black hover:bg-white/90 rounded-xl h-10 px-6 font-black text-xs uppercase tracking-widest shadow-xl">
+                  Review Now
+               </Button>
+               <div className="flex items-center gap-2">
+                  <div className="h-8 w-8 rounded-full border-2 border-white overflow-hidden shadow-lg">
+                     <img src={`https://i.pravatar.cc/100?u=${author}`} className="w-full h-full object-cover" />
+                  </div>
                </div>
             </div>
          </div>
-         <div className="text-right">
-            <div className="text-[0.625rem] text-muted-foreground uppercase tracking-widest font-bold mb-1">Scheduled</div>
-            <div className="text-xs font-bold">{date}</div>
+         <div className="flex items-center justify-between px-2">
+            <div>
+               <h4 className="font-black text-base group-hover:text-brand transition-colors">{title}</h4>
+               <span className="text-[10px] font-black text-muted-foreground uppercase tracking-widest block mt-0.5">Requested by {author}</span>
+            </div>
+            <div className="flex items-center gap-1.5 px-3 py-1 bg-orange-500/10 text-orange-600 rounded-full text-[10px] font-black uppercase tracking-widest">
+               <Clock size={12} /> {deadline}
+            </div>
          </div>
+      </div>
+   )
+}
+
+function PulseCard({ label, value, trend, data }: any) {
+   return (
+      <div className="bg-white border-none shadow-xl shadow-black/5 rounded-3xl p-6 hover:shadow-2xl transition-all group">
+         <div className="flex items-center justify-between mb-4">
+            <div>
+               <span className="text-[10px] font-black uppercase tracking-widest text-muted-foreground block mb-1">{label}</span>
+               <div className="flex items-center gap-2">
+                  <span className="text-2xl font-black tracking-tight text-foreground">{value}</span>
+                  <div className={cn(
+                     "flex items-center gap-0.5 text-[10px] font-black uppercase",
+                     trend === 'up' ? "text-green-500" : "text-muted-foreground"
+                  )}>
+                     {trend === 'up' && <TrendingUp size={12} />}
+                     {trend === 'up' ? "+12%" : "stable"}
+                  </div>
+               </div>
+            </div>
+            {/* Mock Sparkline */}
+            <div className="flex items-end gap-1 h-8">
+               {data.map((h: number, i: number) => (
+                  <div 
+                     key={i} 
+                     className="w-1.5 bg-brand/10 rounded-full group-hover:bg-brand/30 transition-colors" 
+                     style={{ height: `${h}%` }} 
+                  />
+               ))}
+            </div>
+         </div>
+      </div>
+   )
+}
+
+function ActivityTile({ user, action, target, time, icon, isSystem }: any) {
+   return (
+      <div className="flex items-center justify-between p-4 rounded-2xl border-none bg-white shadow-sm hover:shadow-md transition-all group">
+         <div className="flex items-center gap-4">
+            <div className={cn(
+               "h-12 w-12 rounded-xl flex items-center justify-center transition-colors",
+               isSystem ? "bg-brand/10 text-brand" : "bg-muted text-muted-foreground"
+            )}>
+               {icon}
+            </div>
+            <div className="text-sm">
+               <span className="font-black text-foreground">{user}</span>
+               <span className="text-muted-foreground mx-1">{action}</span>
+               <span className="font-black text-brand">{target}</span>
+               <div className="text-[10px] text-muted-foreground uppercase tracking-widest font-black mt-1">
+                  {time}
+               </div>
+            </div>
+         </div>
+         <Button variant="ghost" size="icon" className="h-10 w-10 text-muted-foreground group-hover:text-brand transition-colors rounded-xl">
+            <ArrowUpRight size={18} />
+         </Button>
       </div>
    )
 }

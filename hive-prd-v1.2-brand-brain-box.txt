@@ -1,0 +1,573 @@
+─────────────────────────────────────────────────────────────────────
+THE HIVE — PRD UPDATE v1.2
+Brand Brain BOX · Client Dashboard Revision · Asset Management
+Takeout Media Internal · Addendum to PRD v1.1
+─────────────────────────────────────────────────────────────────────
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+WHAT'S CHANGING
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+The original onboarding flow (M-01, M-02) described clients filling in 
+a brand brief manually and picking a plan. That flow is being replaced 
+and significantly expanded. The new centrepiece of the client onboarding 
+experience is the Brand Brain BOX — a guided setup that turns a 
+business's existing web presence (or a manual upload) into a complete, 
+structured brand identity that lives at the core of everything the 
+platform does for them.
+
+The simple version: Instead of asking the client to fill in a form,
+The Hive now reads their existing brand from the web — or helps them 
+build one from scratch — and generates a structured Brand DNA that 
+powers every piece of content created on the platform, now and going 
+forward. Once their Brand DNA exists, they land on a dashboard built 
+around that brand, with every tool they need within reach.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+05-A   THE UPDATED CLIENT JOURNEY — Step by Step
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Here is what a client now experiences from the moment they sign up to 
+the moment they are on their brand dashboard, ready to create and 
+approve content.
+
+WHAT THE CLIENT DOES
+
+1  Signs up and creates an account
+
+   The client lands on The Hive and registers with their email. They 
+   fill in basic info — name, business email, password. This is the 
+   entry point — clean, fast, and welcoming. Nothing about their brand 
+   is asked yet. That comes next.
+
+2  Picks a plan that fits their budget and goals
+
+   They choose from Takeout Media's service packages — each showing 
+   clearly what is included (number of posts, platforms, asset storage 
+   limit, generation credits, reports, etc.) and the price. The plan 
+   they select determines their Brand Storage Limit and the number of 
+   AI generation credits available to them. They pay or start a trial.
+
+3  Creates their Brand Brain BOX
+
+   Immediately after plan selection, the client is prompted to set up 
+   their Brand Brain BOX. This is not optional — it is the foundation 
+   every other feature is built on. The platform presents two clear 
+   paths side by side:
+
+   PATH A — Import from the web (recommended)
+   The client pastes a link to their website, Instagram, LinkedIn, or 
+   any other public-facing brand presence. The platform reads it, 
+   extracts every available brand signal, and auto-generates a full 
+   Brand DNA. No manual entry required.
+
+   PATH B — Build it manually
+   The client builds their brand identity from scratch, step by step, 
+   directly inside the platform. They can upload their existing logo 
+   or use the built-in AI Logo Maker to create one. Either way, they 
+   then confirm their company name and description, and the platform 
+   auto-generates the rest of the Brand DNA from those inputs.
+
+   Both paths end in exactly the same place: a fully generated Brand DNA 
+   Summary for the client to review. The import path simply gets there 
+   faster because there is more to work with.
+
+4  Reviews and confirms their Brand DNA
+
+   The platform presents the auto-generated Brand DNA as a structured 
+   summary screen. The client reads through it and can immediately click 
+   into any individual section — brand description, slogan, tone of 
+   voice, colour palette, or anything else — and edit it inline. Nothing 
+   is locked. Once they are satisfied, they click Save Brand DNA. That 
+   is the moment the brand officially exists on the platform.
+
+5  Lands on their Brand Dashboard
+
+   After saving, the client lands on their Brand Dashboard for the first 
+   time. This is their home for that specific brand. Every tool, piece of 
+   content, and asset for that brand lives here. If they have multiple 
+   brands, each one has its own independent dashboard and they can switch 
+   between them from the top navigation.
+
+6  Creates content, reviews approvals, and manages their brand
+
+   From the dashboard, the client can immediately begin generating social 
+   media posts, mockups, and other marketing materials. When the Takeout 
+   Media team uploads content for their review, it appears in the 
+   Approvals section. Analytics, calendar, and team management all sit 
+   within the same environment.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+M-02 (REVISED)   Brand Brain BOX — Setup & DNA Generation
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+The Brand Brain BOX is the intelligence layer of The Hive. It is the 
+first thing a client builds after signing up, and it is what every 
+downstream feature — content generation, mockups, approval previews, 
+and the Takeout team's creative brief — draws from. Getting this right 
+matters enormously. The setup flow is designed to make it feel 
+effortless.
+
+There are two ways to create a Brand Brain BOX.
+
+──────────────────────────────────────────────
+PATH A   Import from Website or Social Media
+──────────────────────────────────────────────
+
+The client provides a URL — their website, their Instagram profile, 
+their LinkedIn company page, or any other publicly accessible brand 
+presence. The platform does the rest.
+
+What happens next:
+
+- The platform reads the provided URL and extracts all available 
+  brand signals: logo, colour palette, typography, company name, 
+  description, tagline or slogan, tone of voice, product or service 
+  categories, and any stated mission, vision, or values
+- Where signals are clearly present, the platform captures them 
+  directly
+- Where signals are implied or partial, the platform infers and 
+  completes them
+- The full output is assembled into a structured Brand DNA and 
+  presented to the client for review on the Brand DNA Summary Screen
+
+Key rules: The client can paste multiple URLs — for example, both 
+their website and their Instagram — to give the platform more to 
+work with. The more it can read, the more complete the Brand DNA 
+will be. The client is never shown the extraction process itself — 
+only the finished result, ready for their review.
+
+──────────────────────────────────────────────
+PATH B   Manual Setup
+──────────────────────────────────────────────
+
+The client builds their brand identity step by step inside the 
+platform. This path is designed for clients who do not have a 
+website yet, whose web presence does not reflect their current 
+brand, or who simply prefer to start fresh.
+
+The manual path has two sub-routes for the logo step:
+
+SUB-ROUTE B1 — Upload an existing logo
+The client uploads their logo file (PNG, SVG, or JPG). The platform 
+reads the logo's colour profile to begin building the brand colour 
+palette. The client then confirms their company name and writes a 
+short company description. From those three inputs — logo, name, 
+description — the platform auto-generates the Brand DNA.
+
+SUB-ROUTE B2 — Create a logo with the AI Logo Maker
+The client does not have a logo yet. They are taken into the 
+built-in AI Logo Maker where they generate one. Once they are 
+satisfied with their logo, they confirm it and return to the main 
+onboarding flow — at exactly the same step as B1. They then provide 
+their company name and description, and the platform auto-generates 
+the Brand DNA the same way.
+
+Key rule: The AI Logo Maker is a self-contained step. When the 
+client finishes, they return to the onboarding flow automatically — 
+they do not have to find their way back. The experience should feel 
+like a single continuous journey, not a detour.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+M-02A   Brand DNA — What Gets Generated
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Whether the client imported from the web or built manually, the 
+platform generates the same structured Brand DNA. These are the fields 
+that make up a complete Brand DNA record:
+
+IDENTITY
+- Company name
+- Industry / category
+- Company logo (primary, with extracted variations where available)
+- Website URL (if provided)
+- Connected social accounts (if provided)
+
+BRAND COPY
+- Company description (2–3 sentences, usable as an "About" block)
+- Tagline / slogan
+- Mission statement (what the business does and for whom)
+- Vision statement (where the business is going)
+- Core values (up to five, each with a short label and explanation)
+
+VOICE & POSITIONING
+- Tone of voice (e.g. bold and direct, warm and conversational, 
+  professional and authoritative) — expressed as a short description 
+  plus three to five tone keywords
+- Primary audience (who the brand is speaking to)
+- Unique selling point (what makes this brand different)
+- Primary call to action (e.g. "Book a call", "Shop now", "Get a quote")
+
+VISUAL IDENTITY
+- Primary brand colour(s) with hex codes
+- Secondary / accent colour(s) with hex codes
+- Detected or suggested font pairing (display font + body font)
+- Visual style description (e.g. minimalist, bold and graphic, 
+  editorial, premium, playful)
+
+CONTENT GUIDELINES
+- Topics the brand should talk about (content pillars)
+- Topics the brand should avoid
+- Posting platforms (which social platforms this brand is active on)
+
+Key rule: Every field in the Brand DNA can be edited by the client 
+at any time — both during the initial review and later from the 
+Brand DNA section of their dashboard. The DNA is never locked.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+M-02B   Brand DNA Summary Screen — Review & Confirm
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Once the Brand DNA has been generated — through either path — the 
+client sees a single summary screen that presents all generated fields 
+in a clean, structured layout. This screen is the client's first 
+impression of their brand as The Hive understands it. It needs to 
+feel polished and credible, not like a rough draft.
+
+What the client can do on this screen:
+
+- Read through each section of the Brand DNA at a glance
+- Click directly into any individual field or section to edit it 
+  inline — no separate edit mode, no navigating away
+- See their logo, colour palette, and font pairing rendered visually 
+  — not just listed as values
+- Regenerate any individual section if they want a different 
+  AI-suggested version (without affecting the rest of the DNA)
+- Add any field that was not picked up during generation
+- Delete any field they do not want
+
+Once they are satisfied with the full Brand DNA, they click 
+Save Brand DNA. This action creates the brand record, closes the 
+setup flow, and takes them directly to their Brand Dashboard.
+
+Key rule: The client should never feel like they are submitting 
+something permanent and inflexible. Every element is editable, both 
+now and at any point in the future. The Save button confirms that 
+they are happy to proceed — not that the DNA is set in stone.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+M-05A (NEW)   Brand Dashboard — The Client's Home
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+After saving their Brand DNA, the client lands on their Brand 
+Dashboard. This is what they see every time they log in. It is 
+organised around the brand they are currently viewing — not around 
+the platform in the abstract.
+
+The dashboard home screen shows:
+
+- A summary of what they can do: Create content, approve posts from 
+  Takeout Media, manage assets, use creative tools, and access their 
+  Brand Space
+- Quick-action cards for the most common tasks: Create a Social Media 
+  Post, Create a Mockup, Approvals Waiting, Upload to Assets
+- A count of any pending approvals from the Takeout Media team — with 
+  a direct link to review them
+- Recent activity for this brand: last content generated, last 
+  approval action taken, last asset uploaded
+- Brand storage usage — how much of their plan's storage limit is 
+  currently in use, shown as a simple progress indicator
+- If the client manages more than one brand, a brand switcher in the 
+  top navigation lets them move between brands without leaving the 
+  dashboard environment
+
+Design principle: The Brand Dashboard should feel like a command 
+centre built specifically for this brand. Every label, quick action, 
+and data point shown is in the context of the brand currently 
+selected. Nothing generic. Nothing that belongs to a different brand.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+M-05B (NEW)   Brand Navigation — Menu Structure
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Every brand has its own persistent navigation bar. This menu is 
+always scoped to the brand currently being viewed. The menu items 
+are:
+
+Dashboard      The brand's home screen — summary, quick actions, 
+               recent activity, and storage usage
+
+Brand DNA      The full Brand DNA record for this brand. The client 
+               can view, edit, and update any field at any time. 
+               Changes here flow through to all future content 
+               generation automatically.
+
+Assets         The brand's media library — organised by category. 
+               Full detail in M-06A below.
+
+Tools          The creative generation suite. Social media post 
+               generator, mockup generator (billboards, apparel, 
+               models, physical media). Full detail in M-13 below.
+
+Brand Space    A dedicated area for everything related to how this 
+               brand presents itself to the world — not content for 
+               social posting, but brand-level documents and 
+               references. Pitch deck, company profile, style 
+               guidelines, and similar materials live here.
+
+Approvals      All content submitted by the Takeout Media team for 
+               this brand, waiting for the client's review. The 
+               Client Admin is the only person who can approve. Full 
+               approval flow unchanged from the original PRD (M-07).
+
+Team           Manage who has access to this brand's workspace. 
+               Client Admin can invite team members and set their 
+               permission level (view only, comment only).
+
+Content        The full history of all content created for and by 
+               this brand — generated content, Takeout-submitted 
+               content, and published posts — in one place.
+
+Calendar       Visual scheduling view showing what is planned and 
+               what has gone live for this brand. Client sees 
+               approved and published content only — never internal 
+               drafts from the Takeout team.
+
+Analytics      Performance data for this brand's published content. 
+               Follower growth, reach, impressions, engagement rate, 
+               and best-performing posts, updated automatically.
+
+Key rule: This navigation is always brand-scoped. If the client 
+switches to a different brand, the same menu items appear but all 
+the data inside them belongs to the newly selected brand. Nothing 
+from Brand A leaks into Brand B's view.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+M-06A (NEW)   Assets — Brand Media Library
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+The Assets section is the brand's media library. It is where the 
+client stores every visual and document resource that belongs to this 
+brand. The Takeout team also draws from this library when creating 
+content — having good assets here means better output.
+
+Assets are organised into fixed categories. Within each category, 
+the client can upload, view, download, rename, and delete files.
+
+ASSET CATEGORIES
+
+Logos          All variations of the brand's logo — primary, 
+               reversed, icon-only, black, white, full colour. 
+               Accepted formats: PNG, SVG, PDF.
+
+Images         Photography, product shots, lifestyle images, 
+               and any other brand-owned image assets. 
+               Accepted formats: JPG, PNG, WEBP.
+
+Models         Photos featuring real people — staff, brand 
+               ambassadors, models used in campaigns. 
+               Accepted formats: JPG, PNG.
+
+Social Designs Previously created social media design files — 
+               templates, completed posts, design system 
+               exports. Accepted formats: JPG, PNG, PDF.
+
+Videos         Brand video assets — brand films, product 
+               videos, testimonials, raw footage. 
+               Accepted format: MP4, MOV.
+
+Directions     Creative direction documents — moodboards, 
+               visual references, style direction notes the 
+               Takeout team should follow.
+               Accepted formats: PDF, JPG, PNG.
+
+Brand Space    Pitch deck, company profile, capability statement, 
+               and any other formal brand documents. 
+               Accepted formats: PDF, PPTX, DOCX.
+
+BRAND STORAGE LIMIT
+
+Every brand has a storage limit tied to the client's plan. The 
+storage limit applies per brand — not per account. A client with 
+two brands has a separate storage allocation for each.
+
+Storage usage is shown at all times: in the Assets section as a 
+detailed breakdown by category, and on the Brand Dashboard as a 
+simple summary bar. When a brand approaches its storage limit, 
+the client is notified in advance and prompted to upgrade their 
+plan or remove unused files.
+
+Content uploaded by the Takeout Media team on behalf of the client 
+does not count against the client's Brand Storage Limit.
+
+Key rule: Storage is a plan feature, not a technical afterthought. 
+The limit should be clearly communicated at plan selection, clearly 
+visible once the client is inside the platform, and never a 
+surprise.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+M-13 (NEW)   Tools — Content Generation Suite
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+The Tools section is where the client generates marketing materials 
+using their Brand DNA. Because the Brand DNA is already set up, every 
+generation is brand-aware by default — the right colours, the right 
+tone, the right visual style. The client does not need to describe 
+their brand each time they create something.
+
+Phase 1 includes two generation types:
+
+SOCIAL MEDIA POSTS
+The client selects a platform (Instagram, LinkedIn, Facebook, X), 
+chooses a content type (single image post, carousel, story), and 
+either writes a prompt or selects from suggested content ideas. The 
+platform generates the post using the brand's DNA — colours, fonts, 
+tone of voice, and messaging guidelines — and presents the output 
+as an editable preview. The client can regenerate, adjust the prompt, 
+or edit the result directly.
+
+MOCKUPS
+The client selects a mockup category and the platform places their 
+brand — logo, colours, key messaging — onto the selected template. 
+Phase 1 mockup categories are:
+
+- Billboard (outdoor advertising placement)
+- T-shirt (front and back apparel placement)
+- Caps (embroidered or printed cap placement)
+- Models (lifestyle mockup with a brand-dressed model)
+
+The output is a high-resolution branded image the client can 
+download, share, or save to their Assets library.
+
+GENERATION CREDITS
+
+Each client has a generation credit balance tied to their plan. Every 
+social post or mockup generated uses one credit. The client's 
+remaining credits are shown clearly in the Tools section at all times.
+
+In Phase 1, every client receives a free generation allowance as part 
+of their plan. When the free allowance is used, the client can 
+purchase additional credits or upgrade their plan. Unused free credits 
+do not roll over between billing periods.
+
+Key rule: Generation is always brand-aware. The platform should 
+never ask the client to describe their brand during a generation 
+session — that is exactly what the Brand DNA is for. If the Brand 
+DNA changes, future generations automatically reflect the update.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+UPDATED MODULE LIST — Full Platform
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+M-01    Client Sign-Up & Onboarding
+        Account creation, plan selection, and Brand Brain BOX prompt.
+
+M-02    Brand Brain BOX — Setup & DNA Generation
+        Import from web or manual build. Both paths generate Brand DNA.
+
+M-02A   Brand DNA — Generated Fields
+        The full structured Brand DNA record — identity, copy, voice, 
+        visual identity, and content guidelines.
+
+M-02B   Brand DNA Summary Screen — Review & Confirm
+        Inline editing of generated Brand DNA. Save to confirm.
+
+M-03    Social Account Connection
+        Securely link Instagram, Facebook, X, and LinkedIn. Unchanged.
+
+M-04    Plans & Billing
+        Package tiers, payments, generation credit balance, storage 
+        limits, and invoice management.
+
+M-05A   Brand Dashboard
+        The client's brand home — summary, quick actions, storage 
+        usage, and pending approvals at a glance.
+
+M-05B   Brand Navigation
+        The persistent menu scoped to the current brand.
+
+M-06    Takeout Team Dashboard
+        Where the Takeout team sees all client accounts. Unchanged.
+
+M-06A   Assets — Brand Media Library
+        Per-brand media library with category organisation and plan-
+        based storage limits.
+
+M-07    Approval System
+        Two-level approval flow. Unchanged.
+
+M-08    Content Calendar
+        Monthly and weekly view. Unchanged.
+
+M-09    Publishing
+        Automatic posting at scheduled time. Unchanged.
+
+M-10    Client Portal (now Brand Dashboard per M-05A)
+        Replaced by the brand-scoped dashboard experience.
+
+M-11    Analytics Dashboard
+        Performance data per brand. Unchanged.
+
+M-12    Messaging & Notifications
+        In-platform communication and smart alerts. Unchanged.
+
+M-13    Tools — Content Generation Suite
+        Social media post generator and mockup generator (Phase 1).
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+UPDATED BUILD ORDER — Phase 1
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+The goal of Phase 1 is unchanged: run one complete client from sign-up 
+to published content. The Brand Brain BOX is now part of that critical 
+path. Everything in this list must work end to end before launch.
+
+  Client sign-up and plan selection
+  Brand Brain BOX — Import path (website or social URL)
+  Brand Brain BOX — Manual path (logo upload + AI Logo Maker)
+  Brand DNA auto-generation from both paths
+  Brand DNA Summary Screen with inline editing
+  Save Brand DNA → land on Brand Dashboard
+  Brand Dashboard home screen with quick actions and storage bar
+  Brand navigation (all nine menu items rendering correctly)
+  Assets section with all seven categories and upload functionality
+  Brand storage limit tracking and usage display
+  Tools — Social media post generator (Instagram + LinkedIn for Phase 1)
+  Tools — Mockup generator (Billboard, T-shirt, Caps, Models for Phase 1)
+  Generation credit display and deduction on use
+  Approvals section — full seven-stage approval flow unchanged
+  Content Calendar — approved and published content only in client view
+  Social account connection (Instagram + LinkedIn for Phase 1)
+  Scheduling and auto-publishing
+  Basic in-app notifications (approvals, generation complete, 
+  storage warnings)
+
+The test for Phase 1 being done: A brand-new client signs up, 
+imports their brand from their website, reviews and saves their 
+Brand DNA, generates one social media post and one mockup using 
+their free credits, the Takeout team uploads a post and sends it 
+for approval, the client approves it, and it publishes at the 
+scheduled time. That full loop, working end to end, is the updated 
+MVP.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+WHAT STAYS THE SAME
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Everything not listed above remains exactly as described in PRD v1.1. 
+The Takeout team dashboard, the seven-stage approval system, the 
+content lifecycle, all notification triggers, all edge case handling, 
+the social account connection flow, publishing and retry logic, team 
+management, and all role definitions (Account Manager, Content Team, 
+Client Admin, Client Team Member) are unchanged.
+
+The Account Manager can still complete the entire Brand Brain BOX 
+setup — including import, generation, and review — on behalf of a 
+client during a white-glove onboarding call.
+
+─────────────────────────────────────────────────────────────────────
+The Hive · Takeout Media Internal Operating System & Client Portal
+PRD v1.2 Update · April 2026 · Confidential
+─────────────────────────────────────────────────────────────────────

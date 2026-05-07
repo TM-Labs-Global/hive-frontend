@@ -11,12 +11,12 @@ import { Badge } from "@/components/ui/badge"
 export default function PortalLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex min-h-screen bg-[#FDFDFD]">
-      {/* Client Sidebar - Cleaner and focus on Brand */}
+      {/* Client Sidebar - Focused on Brand Dashboard */}
       <SidebarNav 
         logo={<>The <span className="text-brand">Hive</span></>}
         sections={[
           {
-            label: "Brand Space",
+            label: "",
             items: [
               { label: "Home", href: "/portal", icon: <LayoutGrid size={18} />, active: true },
               { label: "Approvals", href: "/portal/approvals", icon: <CheckSquare size={18} />, count: 3 }
