@@ -26,8 +26,9 @@ import {
   Edit3,
   Target
 } from "lucide-react"
+import Link from "next/link"
 import { 
-  DropdownMenu, 
+  DropdownMenu,
   DropdownMenuContent, 
   DropdownMenuItem, 
   DropdownMenuTrigger 
@@ -114,7 +115,7 @@ export default function AssetsPage() {
                <div className="h-1.5 w-full bg-brand/10 rounded-full overflow-hidden">
                   <div className="h-full bg-brand w-[65%] rounded-full" />
                </div>
-               <p className="text-[9px] text-brand/60 mt-2 font-medium">1.2GB of 2GB used. <span className="underline cursor-pointer">Upgrade Plan</span></p>
+               <p className="text-[9px] text-brand/60 mt-2 font-medium">1.2GB of 2GB used. <Link href="/billing" className="underline cursor-pointer">Upgrade Plan</Link></p>
             </Card>
          </div>
 
