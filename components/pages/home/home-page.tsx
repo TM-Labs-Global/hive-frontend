@@ -70,7 +70,7 @@ export default function HomePage() {
                   </h1>
                   
                   <p className="text-xl text-white/50 max-w-2xl mx-auto mb-12 leading-relaxed font-sans">
-                    The ultimate operating system for Jaiz Bank. 
+                    The ultimate operating system for modern brands. 
                     Upload your brand identity once, and let the Hive automate your creative workflows, 
                     approvals, and content pipelines.
                   </p>
@@ -185,7 +185,7 @@ export default function HomePage() {
       </main>
 
       <footer className="py-12 border-t border-white/5 text-center text-white/20 text-xs">
-        <p>The Hive © 2026 Jaiz Bank. All rights reserved. Built for creators by the Hive team.</p>
+        <p>The Hive © 2026. All rights reserved. Built for creators by the Hive team.</p>
       </footer>
 
       {/* Marquee Keyframes */}

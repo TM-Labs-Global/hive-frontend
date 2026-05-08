@@ -109,10 +109,10 @@ function SocialPreview({ platform, content }: any) {
              )}
           </div>
           <div className="text-[0.8rem] leading-snug">
-             <span className="font-bold mr-2">jaizbankplc</span>
+             <span className="font-bold mr-2">jaizbank</span>
              {content.caption}
           </div>
-          <div className="text-[0.7rem] text-brand font-medium">#jaizbank #ethicalbanking #noninterest</div>
+          <div className="text-[0.7rem] text-brand font-medium">#branding #innovation #marketing</div>
         </div>
       </Card>
     </div>
@@ -126,8 +126,8 @@ export default function ApprovalsPage() {
   const [showRevisions, setShowRevisions] = React.useState(false)
 
   const postContent = {
-    title: "Ethical Banking Campaign",
-    caption: "Jaiz Bank Plc’s Executive Management Team, led by the Managing Director, Haruna Musa, PhD, paid a working visit to the National Sugar Development Council, where they were received by the Executive Secretary, Kamar Bakrin, as part of ongoing efforts to create more value for our stakeholders.",
+    title: "Modern Brand Campaign",
+    caption: "Our team is dedicated to providing innovative and value-driven solutions to our customers. We focus on ethical practices and transparent communication as part of our ongoing efforts to create more value for our stakeholders.",
     scheduledFor: "May 12, 2026 - 10:00 AM",
     revisionCount: 2
   }
@@ -194,7 +194,7 @@ export default function ApprovalsPage() {
                   <CardContent className="p-6">
                      <h4 className="text-[0.625rem] font-black text-muted-foreground uppercase tracking-widest mb-4">Hashtags</h4>
                      <div className="flex flex-wrap gap-2">
-                        {["#jaizbank", "#ethicalbanking", "#noninterest", "#financialfreedom"].map(h => (
+                        {["#branding", "#innovation", "#marketing", "#excellence"].map(h => (
                            <Badge key={h} variant="default" className="text-brand bg-brand-bg border-brand/10">{h}</Badge>
                         ))}
                      </div>
@@ -244,7 +244,7 @@ export default function ApprovalsPage() {
                      <div className="grid grid-cols-2 gap-8">
                         <div>
                            <span className="text-[9px] font-bold text-muted-foreground uppercase block mb-1">Objective</span>
-                           <p className="text-xs font-medium leading-relaxed">Increase ethical banking awareness and drive traffic to the Sharia-compliant investment portal.</p>
+                           <p className="text-xs font-medium leading-relaxed">Increase brand awareness and drive traffic to the main product portal.</p>
                         </div>
                         <div>
                            <span className="text-[9px] font-bold text-muted-foreground uppercase block mb-1">Target Audience</span>

@@ -188,7 +188,7 @@ export default function PricingPage() {
       </main>
 
       <footer className="py-12 border-t border-white/5 text-center text-white/20 text-xs">
-        <p>The Hive © 2026 Jaiz Bank. All rights reserved. Built for creators by the Hive team.</p>
+        <p>The Hive © 2026. All rights reserved. Built for creators by the Hive team.</p>
       </footer>
     </div>
   )

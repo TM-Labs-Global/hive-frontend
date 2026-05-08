@@ -193,12 +193,9 @@ export default function DashboardPage() {
                <Card className="bg-white border-2 border-brand/10 p-8 rounded-[2.5rem] shadow-xl shadow-brand/5 relative overflow-hidden group hover:border-brand/30 transition-all">
                   <div className="absolute -top-4 -right-4 h-24 w-24 bg-brand/5 rounded-full blur-2xl group-hover:bg-brand/10 transition-colors" />
                   <div className="relative z-10">
-                     <div className="h-12 w-12 rounded-2xl bg-brand/10 text-brand flex items-center justify-center mb-6">
-                        <Badge className="bg-brand text-white border-none p-0 h-6 w-6 rounded-lg flex items-center justify-center">
-                           <Check size={14} />
-                        </Badge>
-                     </div>
-                     <h4 className="font-display text-xl font-black mb-2">Brand DNA Verified</h4>
+                     <div className="h-8 w-8 rounded-md bg-brand/10 flex items-center justify-center text-brand font-black text-xs mb-4">YB</div>
+                     <h3 className="font-display text-lg font-black tracking-tight text-foreground">Your Brand</h3>
+                     <p className="text-xs text-muted-foreground font-medium mb-8">contact@yourbrand.com</p>
                      <p className="text-sm text-muted-foreground mb-8 leading-relaxed">
                         Your identity guidelines are fully integrated. AI tools are now context-aware.
                      </p>
@@ -258,6 +255,10 @@ function ActionCard({ title, desc, icon, href, variant, badge }: any) {
             </div>
             
             <div className="mt-auto">
+               <div className="flex items-center gap-2 mb-2">
+                  <div className="h-1.5 w-1.5 rounded-full bg-brand" />
+                  <span className="text-xs font-bold text-foreground group-hover:text-brand">Your Brand</span>
+               </div>
                <h4 className="font-black text-base mb-1.5 group-hover:text-brand transition-colors tracking-tight">{title}</h4>
                <p className="text-[12px] text-muted-foreground leading-relaxed font-medium opacity-80">{desc}</p>
             </div>

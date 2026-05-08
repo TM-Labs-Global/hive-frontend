@@ -56,7 +56,7 @@ export default function TeamPage() {
             <h1 className="font-display text-4xl font-black tracking-tight text-foreground">
                Team <span className="text-brand">Management</span>
             </h1>
-            <p className="text-muted-foreground mt-2">Manage who has access to the Jaiz Bank brand portal.</p>
+            <p className="text-muted-foreground mt-2">Manage who has access to the Jaiz Bank portal.</p>
          </div>
 
          <Dialog>

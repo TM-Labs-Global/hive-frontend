@@ -345,7 +345,7 @@ export default function OnboardingPage() {
                      {setupView === 'summary' && (
                         <div className="w-full animate-in fade-in slide-in-from-bottom-4 duration-500">
                            <div className="mb-10 text-left">
-                              <h2 className="text-3xl font-black tracking-tight mb-2">Your Brand DNA</h2>
+                              <h2 className="text-3xl font-black tracking-tight mb-2">Jaiz Bank DNA</h2>
                               <p className="text-muted-foreground text-sm flex items-center gap-2">
                                  Please feel free to edit and make changes
                               </p>

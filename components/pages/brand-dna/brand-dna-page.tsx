@@ -26,7 +26,7 @@ export default function BrandDNAPage() {
       <div className="flex flex-col md:flex-row md:items-center justify-between mb-10 gap-6">
         <div>
           <h1 className="font-display text-4xl font-black tracking-tight text-foreground">
-            Your Brand DNA
+            Jaiz Bank DNA
           </h1>
           <p className="text-muted-foreground mt-1 flex items-center gap-2">
             Please feel free to edit and make changes
@@ -161,20 +161,20 @@ export default function BrandDNAPage() {
           {/* Row 2: About Us & Mission */}
           <div className="lg:col-span-2 lg:row-span-2">
              <DNAGridCard title="About Us">
-                <EditableParagraph 
-                   value="Jaiz Bank Plc is a bank in Nigeria operating under Islamic banking principles and is a non-interest bank. It is the first non-interest bank established in Nigeria and is headquartered in Abuja, the capital city of the country. Jaiz Bank provides a wide range of financial services to individuals and businesses, focusing on ethical and transparent banking solutions."
-                   className="text-muted-foreground leading-relaxed text-lg"
-                   editMode
-                />
+                 <EditableParagraph 
+                    value="Jaiz Bank Plc is a bank in Nigeria operating under Islamic banking principles and is a non-interest bank. It is the first non-interest bank established in Nigeria and is headquartered in Abuja, the capital city of the country. Jaiz Bank provides a wide range of financial services to individuals and businesses, focusing on ethical and transparent banking solutions."
+                    className="text-muted-foreground leading-relaxed text-lg"
+                    editMode
+                 />
              </DNAGridCard>
           </div>
           <div className="lg:col-span-1">
              <DNAGridCard title="Mission">
-                <EditableParagraph 
-                   value="To provide innovative, ethical and value-driven financial services to our customers through a committed and professional workforce."
-                   className="text-muted-foreground leading-relaxed"
-                   editMode
-                />
+                 <EditableParagraph 
+                    value="To provide innovative, ethical and value-driven financial services to our customers through a committed and professional workforce."
+                    className="text-muted-foreground leading-relaxed"
+                    editMode
+                 />
              </DNAGridCard>
           </div>
 
