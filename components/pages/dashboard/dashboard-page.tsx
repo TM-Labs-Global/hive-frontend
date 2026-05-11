@@ -68,7 +68,7 @@ export default function DashboardPage() {
             title="Social Media Post" 
             desc="AI-generated posts tuned to your voice."
             icon={<Zap size={22} />}
-            href="/tools?tab=social"
+            href="/social-media"
             variant="brand"
          />
          <ActionCard 
